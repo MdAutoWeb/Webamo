@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Variables ===== */
+:root {
+  --bg-0: #05060f;
+  --bg-1: #070b16;
+
+  --txt-main: 255 255 255;
+  --txt-soft: 180 190 210;
+  --txt-muted: 120 130 150;
+
+  --cyan: 64 196 255;
+  --blue: 37 99 235;
+  --violet: 145 105 255;
+}
+
+/* ===== Base ===== */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: rgb(var(--txt-main));
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+}
+
+/* ===== Background base gradient (moet op wrapper!) ===== */
+.bg-base {
+  background: radial-gradient(
+      ellipse 1200px 600px at 75% 15%,
+      rgba(64, 196, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 1000px 500px at 20% 5%,
+      rgba(37, 99, 235, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 800px 400px at 50% 95%,
+      rgba(145, 105, 255, 0.08),
+      transparent 55%
+    ),
+    linear-gradient(180deg, var(--bg-1), var(--bg-0));
+}
+
+/* ===== Glass cards ===== */
+.glass-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.divider-glow {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(64, 196, 255, 0.55),
+    transparent
+  );
+  box-shadow: 0 0 20px rgba(64, 196, 255, 0.45);
+}
+
+/* helpers */
+.text-soft {
+  color: rgb(var(--txt-soft));
+}
+.text-muted {
+  color: rgb(var(--txt-muted));
+}
+.text-cyan {
+  color: rgb(var(--cyan));
+}
+.text-violet {
+  color: rgb(var(--violet));
+}
+
+/* Gradient text utilities */
+.gradient-text {
+  background: linear-gradient(135deg, #40c4ff, #2563eb, #9169ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section glow effect */
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 50%,
+    rgba(145, 105, 255, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Select dropdown styling - zelfde achtergrond als andere velden */
+select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+select option {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+select:focus option:checked {
+  background-color: rgba(37, 99, 235, 0.2) !important;
+}
