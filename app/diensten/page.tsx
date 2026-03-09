@@ -71,7 +71,7 @@ export default function DienstenPage() {
         <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
         <div className="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Kaart 1 - Digitale fundering */}
-          <div className="glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
+          <div className="w-full glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
             <p className="text-[11px] uppercase tracking-[0.18em] text-white/50 mb-2">
               Oplossing 01
             </p>
@@ -93,7 +93,7 @@ export default function DienstenPage() {
           </div>
 
           {/* Kaart 2 - Proces versneller */}
-          <div className="glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
+          <div className="w-full glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
             <p className="text-[11px] uppercase tracking-[0.18em] text-white/50 mb-2">
               Oplossing 02
             </p>
