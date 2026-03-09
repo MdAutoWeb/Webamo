@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -16,19 +16,19 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
 export default function Hero() {
   return (
-    <section className="relative z-10 px-6 md:px-12 lg:px-16 pt-16 md:pt-20 pb-8 md:pb-10 min-h-screen flex items-center overflow-hidden">
+    <section className="relative z-10 px-6 md:px-12 lg:px-16 pt-20 md:pt-24 pb-8 md:pb-10 overflow-hidden">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-5" />
 
       {/* Large soft blue radial glow from below the text */}
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[720px] h-[720px] rounded-full bg-blue-500/20 blur-[150px]" />
+      <div className="pointer-events-none absolute -bottom-64 left-1/2 -translate-x-1/2 w-[820px] h-[820px] rounded-full bg-blue-500/15 blur-[180px]" />
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
