@@ -1,9 +1,9 @@
 export default function Header() {
   return (
     <header className="sticky top-0 z-30 px-6 md:px-12 lg:px-16 pt-3 pb-2 bg-black/60 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center md:justify-between gap-2 md:gap-0">
         {/* Logo */}
-        <a href="/" className="flex items-center justify-between md:justify-start">
+        <a href="/" className="flex items-center justify-center md:justify-start">
           <img
             src="/images/Webamo-logo.png"
             alt="Webamo"

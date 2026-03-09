@@ -10,11 +10,11 @@ export default function Footer() {
           {/* Main Footer Content */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12 mb-12">
             {/* Brand Section */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex w-full justify-center md:w-auto md:justify-start">
               <img
                 src="/images/Webamo-logo.png"
                 alt="Webamo"
-                className="h-24 w-auto block"
+                className="h-16 md:h-24 w-auto block"
                 style={{
                   filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.7))",
                 }}
