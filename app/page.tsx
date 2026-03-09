@@ -1,46 +1,48 @@
 import type { Metadata } from "next";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import ProblemCards from "./components/ProblemCards";
-import Solution from "./components/Solution";
+import AllInOneEngine from "./components/AllInOneEngine";
+import SystemFlow from "./components/SystemFlow";
+import PortfolioShowcase from "./components/PortfolioShowcase";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Website Laten Maken met Automatisatie | Webamo België",
+  title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
   description:
-    "Webamo bouwt moderne, conversiegerichte websites met slimme automatisatie voor zelfstandigen en KMO's in België. CRM-koppelingen, e-mailautomatisatie, leadgeneratie en meer. Plan je gratis intakegesprek.",
+    "Op zoek naar een webdesigner in Brugge of Vlaanderen? Webamo bouwt high-end websites en slimme automatisaties (CRM, Airtable) die je business doen groeien. Ontdek onze cases.",
   keywords: [
-    "website laten maken belgië",
-    "webdesign belgië",
-    "website met automatisatie",
-    "conversiegerichte website",
-    "CRM integratie",
-    "e-mailautomatisatie",
-    "website voor zelfstandige",
-    "website voor KMO",
-    "landingpage maken",
-    "webdesign brugge",
-    "website maken brugge",
-    "webdesign west-vlaanderen",
+    "webdesigner brugge",
+    "website laten maken brugge",
+    "automatisatie brugge",
+    "webdesign vlaanderen",
+    "airtable specialist belgië",
+    "automatisatie voor KMO's",
+    "website maken vlaanderen",
+    "webdesigner west-vlaanderen",
+    "CRM integratie brugge",
+    "business automatisatie belgië",
+    "webdesigner gent",
+    "webdesigner antwerpen",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Website Laten Maken met Automatisatie | Webamo België",
+    title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
     description:
-      "Moderne websites met slimme automatisatie voor zelfstandigen en KMO's. Gratis intakegesprek.",
+      "Webdesigner in Brugge en Vlaanderen. High-end websites en slimme automatisaties (CRM, Airtable) die je business doen groeien.",
     url: "https://webamo.be",
   },
 };
 
 export default function Page() {
   return (
-    <main className="relative z-10">
+    <main className="relative z-10 bg-black">
       <Header />
       <Hero />
-      <ProblemCards />
-      <Solution showPortfolio={true} />
+      <AllInOneEngine />
+      <SystemFlow />
+      <PortfolioShowcase />
       <Footer />
     </main>
   );

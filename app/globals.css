@@ -24,27 +24,15 @@ body {
 
 body {
   color: rgb(var(--txt-main));
-  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  background: #000000;
 }
 
-/* ===== Background base gradient (moet op wrapper!) ===== */
-.bg-base {
-  background: radial-gradient(
-      ellipse 1200px 600px at 75% 15%,
-      rgba(64, 196, 255, 0.12),
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 1000px 500px at 20% 5%,
-      rgba(37, 99, 235, 0.1),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 800px 400px at 50% 95%,
-      rgba(145, 105, 255, 0.08),
-      transparent 55%
-    ),
-    linear-gradient(180deg, var(--bg-1), var(--bg-0));
+/* ===== Background Grid/Beams ===== */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 /* ===== Glass cards ===== */
@@ -54,20 +42,84 @@ body {
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.02)
   );
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.divider-glow {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(64, 196, 255, 0.55),
-    transparent
-  );
-  box-shadow: 0 0 20px rgba(64, 196, 255, 0.45);
+/* ===== Button Glow ===== */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4), 0 0 40px rgba(37, 99, 235, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), 0 0 60px rgba(37, 99, 235, 0.3);
+  }
+}
+
+.button-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Subtle scale/opacity pulse for primary CTA */
+@keyframes button-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.98;
+  }
+}
+
+.button-pulse {
+  animation: button-pulse 4s ease-in-out infinite;
+}
+
+/* ===== Fade In Animations ===== */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== System Flow Animation ===== */
+@keyframes flow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text-hero {
+  background: linear-gradient(180deg, #e0e0e0 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* helpers */
@@ -103,7 +155,7 @@ body {
   inset: 0;
   background: radial-gradient(
     ellipse 800px 400px at 50% 50%,
-    rgba(145, 105, 255, 0.08),
+    rgba(37, 99, 235, 0.1),
     transparent 70%
   );
   pointer-events: none;
@@ -130,7 +182,6 @@ select option {
   background-color: rgba(0, 0, 0, 0.95) !important;
   color: rgba(255, 255, 255, 0.9) !important;
 }
-
 select:focus option:checked {
   background-color: rgba(37, 99, 235, 0.2) !important;
 }

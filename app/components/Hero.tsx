@@ -1,73 +1,99 @@
-import Starfield from "./Starfield";
+"use client";
+
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Hero() {
   return (
-    <section className="relative z-10 px-6 md:px-12 lg:px-16 pt-8 md:pt-10 pb-4 md:pb-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-          {/* Left */}
-          <div className="pt-1 md:pt-2">
-            <h1 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold leading-[1.06] tracking-tight">
-              <span className="sr-only">
-                Websites die klanten opleveren. Automatisatie die tijd bespaart.
-              </span>
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                Websites die klanten
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                opleveren.
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                Automatisatie die tijd
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-                bespaart.
-              </span>
-            </h1>
+    <section className="relative z-10 px-6 md:px-12 lg:px-16 pt-16 md:pt-20 pb-8 md:pb-10 min-h-screen flex items-center overflow-hidden">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-grid opacity-5" />
 
-            <p className="mt-5 text-[15px] md:text-[16px] text-white/75 leading-relaxed max-w-xl">
-              Wij bouwen moderne websites voor zelfstandigen, gecombineerd met
-              slimme automatisatie die leads opvolgt, afspraken plant en manueel
-              werk vermindert.
-            </p>
+      {/* Large soft blue radial glow from below the text */}
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[720px] h-[720px] rounded-full bg-blue-500/20 blur-[150px]" />
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Subtle SEO Tags in pill */}
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm mb-5"
+          >
+            <span className="text-[11px] text-white/60 tracking-tight uppercase">
+              Websites op maat
+            </span>
+            <span className="text-[11px] text-white/30">•</span>
+            <span className="text-[11px] text-white/60 tracking-tight uppercase">
+              Slimme koppelingen
+            </span>
+            <span className="text-[11px] text-white/30">•</span>
+            <span className="text-[11px] text-white/60 tracking-tight uppercase">
+              Business workflows
+            </span>
+          </motion.div>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <a
-                href="/contact"
-                className="px-7 py-3.5 rounded-lg font-semibold text-white text-[14px]
-                           bg-gradient-to-r from-blue-500 to-violet-500
-                           hover:from-blue-600 hover:to-violet-600
-                           shadow-[0_18px_40px_rgba(37,99,235,0.28)]
-                           transition-all text-center"
-              >
-                Gratis intakegesprek
-              </a>
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.05] tracking-tight mb-4 gradient-text-hero"
+          >
+            High-end webdesign & business automatisatie in Vlaanderen.
+          </motion.h1>
 
-              <a
-                href="/diensten"
-                className="px-7 py-3.5 rounded-lg font-semibold text-white text-[14px]
-                           border border-white/15 hover:bg-white/5
-                           transition-all text-center"
-              >
-                Bekijk diensten
-              </a>
+          <motion.p
+            variants={itemVariants}
+            className="text-sm md:text-base text-white/70 leading-relaxed max-w-2xl mx-auto mb-6 tracking-tight"
+          >
+            Webamo bouwt digitale ervaringen die verkopen én systemen die je
+            administratie op automatische piloot zetten. Geen manueel gepruts
+            meer, maar een motor die voor jou draait.
+          </motion.p>
+
+          {/* Buttons with ambient glow behind */}
+          <motion.div
+            variants={itemVariants}
+            className="relative flex flex-col sm:flex-row gap-2 justify-center"
+          >
+            {/* Soft oval glow behind buttons (no harde balk) */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="w-56 md:w-72 h-16 rounded-full bg-blue-500/20 blur-[60px] opacity-70" />
             </div>
-          </div>
 
-          {/* Right - Starfield */}
-          <div className="relative hidden lg:block h-[400px]">
-            <Starfield
-              width={520}
-              height={400}
-              starCount={80}
-              opacity={0.7}
-              largerStars={false}
-            />
-          </div>
-        </div>
+            <a
+              href="/contact"
+              className="relative button-glow px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-xs transition-all hover:scale-105 tracking-tight"
+            >
+              Start je project
+            </a>
+            <a
+              href="/diensten"
+              className="relative px-5 py-2.5 rounded-lg border border-white/20 text-white font-semibold text-xs hover:bg-white/5 transition-all tracking-tight"
+            >
+              Bekijk de cases
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

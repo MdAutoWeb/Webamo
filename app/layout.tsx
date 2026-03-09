@@ -90,31 +90,71 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const jsonLd = {
+  const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
+    "@id": "https://webamo.be/#organization",
     name: "Webamo",
     description:
-      "Webamo bouwt moderne websites met slimme automatisatie voor zelfstandigen en KMO's in België.",
+      "Webamo bouwt high-end websites en slimme automatisaties (CRM, Airtable) voor KMO's en zelfstandigen in Brugge en heel Vlaanderen.",
     url: "https://webamo.be",
     logo: "https://webamo.be/images/logo.png",
+    image: "https://webamo.be/images/logo.png",
+    telephone: "+32",
+    email: "info@webamo.be",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Brugge",
       addressRegion: "West-Vlaanderen",
       addressCountry: "BE",
     },
-    areaServed: {
-      "@type": "Country",
-      name: "België",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "51.2093",
+      longitude: "3.2247",
     },
-    serviceType: [
-      "Website Development",
-      "Web Design",
-      "Business Automation",
-      "CRM Integration",
-      "Email Automation",
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Brugge",
+      },
+      {
+        "@type": "City",
+        name: "Gent",
+      },
+      {
+        "@type": "City",
+        name: "Antwerpen",
+      },
+      {
+        "@type": "State",
+        name: "Vlaanderen",
+      },
     ],
+    priceRange: "$$",
+    sameAs: [],
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Web Design & Business Automation",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Webamo",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Brugge",
+        addressRegion: "West-Vlaanderen",
+        addressCountry: "BE",
+      },
+    },
+    areaServed: {
+      "@type": "State",
+      name: "Vlaanderen",
+    },
+    description:
+      "High-end webdesign en business automatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen. Websites, CRM integratie (Airtable), en workflow automatisatie.",
     offers: {
       "@type": "Offer",
       description: "Gratis intakegesprek voor nieuwe klanten",
@@ -126,13 +166,17 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-[#050812] text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-black text-white`}
       >
-        <div className="relative min-h-screen overflow-hidden bg-base">
+        <div className="relative min-h-screen overflow-hidden">
           {children}
         </div>
       </body>
