@@ -14,34 +14,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Webamo - Websites & Automatisatie voor Zelfstandigen | België",
+    default: "Webamo - Webdesign & Automatisatie voor Zelfstandigen in Brugge",
     template: "%s | Webamo",
   },
   description:
-    "Webamo bouwt moderne websites met slimme automatisatie voor zelfstandigen en KMO's in België. Conversiegerichte websites, CRM-koppelingen, e-mailautomatisatie en meer. Gratis intakegesprek.",
+    "Webamo bouwt moderne websites en slimme automatisatie voor zelfstandigen en KMO's in Brugge en Vlaanderen. Webdesign, CRM-koppelingen en e-mailautomatisatie op maat.",
   keywords: [
-    "website laten maken",
-    "website maken belgië",
+    "webdesign Brugge",
+    "website laten maken Brugge",
+    "webdesigner Brugge",
+    "webdesign West-Vlaanderen",
+    "website voor zelfstandigen",
+    "website voor KMO",
     "webdesign voor zelfstandigen",
-    "webdesign belgië",
-    "moderne websites",
-    "automatisatie voor ondernemers",
-    "AI automatisatie",
-    "landingpage bouwen",
-    "website en automatisatie",
     "CRM integratie",
     "e-mailautomatisatie",
-    "website voor KMO",
-    "website voor zelfstandige",
-    "conversiegerichte website",
+    "business automatisatie",
     "website met automatisatie",
-    "webdesign belgië",
-    "website maken belgië",
-    "webdesign brugge",
-    "webdesign antwerpen",
-    "webdesign brussel",
-    "webdesign gent",
-    "website developer belgië",
+    "conversiegerichte website",
   ],
   authors: [{ name: "Maikel", url: "https://webamo.be" }],
   creator: "Webamo",
@@ -92,7 +82,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "@id": "https://webamo.be/#organization",
     name: "Webamo",
     description:
@@ -100,7 +90,6 @@ export default function RootLayout({
     url: "https://webamo.be",
     logo: "https://webamo.be/images/logo.png",
     image: "https://webamo.be/images/logo.png",
-    telephone: "+32",
     email: "info@webamo.be",
     address: {
       "@type": "PostalAddress",
@@ -132,13 +121,15 @@ export default function RootLayout({
       },
     ],
     priceRange: "$$",
-    sameAs: [],
+    sameAs: [
+      "https://www.linkedin.com/company/webamo"
+    ],
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Web Design & Business Automation",
+    serviceType: "Webdesign en bedrijfsautomatisatie",
     provider: {
       "@type": "LocalBusiness",
       name: "Webamo",
