@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const contactReasons = [
-  "Nieuwe website",
-  "Website + automatisatie (funnels, e-mails, CRM, koppelingen)",
-  "Huidige website verbeteren (snelheid / conversie, automatisatie)",
+  "De Snelle Start - Professionele website voor verenigingen & starters",
+  "High-Performance Web - Maatwerk website voor groeiende bedrijven",
+  "Slimme Workflows & AI - Automatisatie, CRM & AI-oplossingen",
   "Ik weet het nog niet precies",
 ] as const;
 

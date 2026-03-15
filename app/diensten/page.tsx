@@ -27,18 +27,39 @@ export const metadata: Metadata = {
   },
 };
 
-const foundationBullets = [
-  "Conversiegerichte landingpages",
-  "Automatische opvolg-e-mails",
-  "CRM-koppelingen & pipelines",
-  "Online afspraken & herinneringen",
-] as const;
-
-const acceleratorBullets = [
-  "Formulieren koppelen aan CRM",
-  "Automatische notificaties & reminders",
-  "Tool-integraties (Notion, HubSpot, ...)",
-  "Custom API-koppelingen",
+const packages = [
+  {
+    id: "01",
+    title: "De Snelle Start",
+    doel: "Verenigingen & Starters.",
+    content: "Een professionele website die simpel te beheren is en direct resultaat levert. Perfect voor wie snel en betaalbaar online wil staan.",
+    points: [],
+    price: "Vanaf €499",
+    note: ""
+  },
+  {
+    id: "02",
+    title: "High-Performance Web",
+    doel: "Maatwerk voor groeiende bedrijven.",
+    content: "Een razendsnelle, op maat gebouwde website volledig rond jouw merk. Technisch superieur, geoptimaliseerd voor Google en gebouwd voor maximale conversie.",
+    points: [],
+    price: "Op aanvraag",
+    note: ""
+  },
+  {
+    id: "03",
+    title: "Slimme Workflows & AI",
+    doel: "Efficiëntie & Schaalbaarheid.",
+    content: "Laat de techniek het saaie werk doen. Van CRM-systemen en automatische facturatie tot slimme AI-oplossingen (LLM) en chatbots.",
+    points: [
+      "CRM & Lead-opvolging",
+      "AI & LLM Integraties",
+      "24/7 Slimme Chatbots",
+      "Automatische Facturatie"
+    ],
+    price: "Op aanvraag",
+    note: "Ik werk uitsluitend in eigen opgebouwde omgevingen om stabiliteit te garanderen (geen aanpassingen in code van derden)."
+  }
 ] as const;
 
 const techStack = ["CRM", "AI", "API", "Chatbots", "Automatische e-mails"] as const;
@@ -66,53 +87,49 @@ export default function DienstenPage() {
         </div>
       </section>
 
-      {/* Twee hoofdkeuzes */}
+      {/* Drie hoofdkeuzes */}
       <section className="relative px-6 md:px-12 lg:px-16 pb-8 md:pb-10">
         <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
-        <div className="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Kaart 1 - Digitale fundering */}
-          <div className="w-full glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-white/50 mb-2">
-              Oplossing 01
-            </p>
-            <h2 className="text-xl md:text-2xl font-semibold text-white tracking-tight mb-2">
-              Een nieuwe site die voor je werkt
-            </h2>
-            <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-4">
-              Website + automatisatie. Alles-in-één: van de eerste klik tot de
-              getekende offerte.
-            </p>
-            <ul className="space-y-2 text-xs md:text-sm text-white/80">
-              {foundationBullets.map((item) => (
-                <li key={item} className="flex gap-2 items-start">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Kaart 2 - Proces versneller */}
-          <div className="w-full glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-white/50 mb-2">
-              Oplossing 02
-            </p>
-            <h2 className="text-xl md:text-2xl font-semibold text-white tracking-tight mb-2">
-              Je huidige tools koppelen
-            </h2>
-            <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-4">
-              Pure automatisatie. Ik laat je bestaande software (CRM, mail,
-              agenda) eindelijk met elkaar praten.
-            </p>
-            <ul className="space-y-2 text-xs md:text-sm text-white/80">
-              {acceleratorBullets.map((item) => (
-                <li key={item} className="flex gap-2 items-start">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {packages.map((pkg) => (
+            <div
+              key={pkg.id}
+              className="w-full glass-card rounded-2xl p-6 md:p-7 border border-white/10 hover:border-blue-500/60 hover:shadow-[0_0_30px_rgba(37,99,235,0.35)] hover:scale-[1.02] transition-transform transition-shadow transition-colors duration-300 flex flex-col"
+            >
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/50 mb-2">
+                Oplossing {pkg.id}
+              </p>
+              <h2 className="text-xl md:text-2xl font-semibold text-white tracking-tight mb-1">
+                {pkg.title}
+              </h2>
+              <p className="text-xs md:text-sm text-white/60 leading-relaxed mb-3">
+                Doel: {pkg.doel}
+              </p>
+              <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-4">
+                {pkg.content}
+              </p>
+              {pkg.points.length > 0 && (
+                <ul className="space-y-2 text-xs md:text-sm text-white/80 mb-4 flex-grow">
+                  {pkg.points.map((item) => (
+                    <li key={item} className="flex gap-2 items-start">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {pkg.note && (
+                <p className="text-xs text-white/50 italic mb-4 leading-relaxed">
+                  {pkg.note}
+                </p>
+              )}
+              <div className="mt-auto pt-4 border-t border-white/10">
+                <p className="text-base md:text-lg font-semibold text-blue-400">
+                  {pkg.price}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
