@@ -25,8 +25,7 @@ export const metadata: Metadata = {
     "webdesigner antwerpen",
   ],
   alternates: {
-    // Expliciete canonical naar non-www hoofdversie
-    canonical: "https://webamo.be/",
+    canonical: "/",
   },
   openGraph: {
     title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
