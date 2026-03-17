@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "webdesign consultatie",
   ],
   alternates: {
-    canonical: "/contact",
+    canonical: "https://webamo.be/contact",
   },
   openGraph: {
     title: "Contact - Gratis Intakegesprek | Webamo",

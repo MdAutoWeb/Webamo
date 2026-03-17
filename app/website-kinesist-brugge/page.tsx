@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "meer afspraken kinesist Brugge",
   ],
   alternates: {
-    canonical: "/website-kinesist-brugge",
+    canonical: "https://webamo.be/website-kinesist-brugge",
   },
   openGraph: {
     title: "Website kinesist Brugge | Meer afspraken via Webamo",

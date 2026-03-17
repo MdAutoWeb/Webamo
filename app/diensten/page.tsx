@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "website die afspraken oplevert",
   ],
   alternates: {
-    canonical: "/diensten",
+    // Canonical naar non-www variant
+    canonical: "https://webamo.be/diensten",
   },
   openGraph: {
     title: "Diensten | Webamo – Websites die werken",

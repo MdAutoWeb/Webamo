@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "meer offertes dakwerker Brugge",
   ],
   alternates: {
-    canonical: "/website-dakwerker-brugge",
+    canonical: "https://webamo.be/website-dakwerker-brugge",
   },
   openGraph: {
     title: "Website dakwerker Brugge | Meer offerte-aanvragen via Webamo",
