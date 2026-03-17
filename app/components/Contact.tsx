@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 const contactReasons = [
-  "De Snelle Start - Professionele website voor verenigingen & starters",
-  "High-Performance Web - Maatwerk website voor groeiende bedrijven",
-  "Slimme Workflows & AI - Automatisatie, CRM & AI-oplossingen",
+  "Website die direct klanten oplevert",
+  "Website op maat voor groei",
+  "Automatisatie die werk uit handen neemt",
   "Ik weet het nog niet precies",
 ] as const;
 
@@ -121,15 +121,14 @@ export default function ContactSection() {
         {/* Intro */}
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-[30px] md:text-[40px] font-extrabold text-white leading-tight">
-            Plan een kort{" "}
+            Vraag een{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-              intakegesprek
+              gratis website-audit
             </span>
           </h1>
           <p className="mt-4 text-white/75 text-[15px] md:text-[16px] leading-relaxed">
-            In 15–20 minuten kijken we samen wat er mogelijk is voor jouw
-            website en automatisatie. Geen verkooppraat, maar concreet meedenken
-            over wat je nodig hebt.
+            In 15–20 minuten kijk ik naar je huidige website en toon ik waar je klanten of afspraken verliest.
+            Geen verkooppraat, maar concrete verbeterpunten.
           </p>
         </div>
 
@@ -267,7 +266,7 @@ export default function ContactSection() {
                     setFormData({ ...formData, situation: e.target.value })
                   }
                   className="w-full rounded-lg bg-white/5 border border-white/15 px-3 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-blue-500/70 focus:border-transparent resize-none"
-                  placeholder="Waar loop je nu tegenaan? Wat wil je verbeteren?"
+                  placeholder="Waar loop je nu tegenaan? Wat wil je verbeteren aan je website of aanpak?"
                 />
               </div>
 
@@ -299,7 +298,7 @@ export default function ContactSection() {
                 >
                   {isSubmitting
                     ? "Verzenden..."
-                    : "Gratis intakegesprek plannen"}
+                    : "Vraag je gratis audit aan"}
                 </button>
                 <p className="text-[12px] text-white/50">
                   Je krijgt binnen 1 werkdag een reactie met een voorstel voor
@@ -318,8 +317,7 @@ export default function ContactSection() {
               <p className="mt-3 leading-relaxed">
                 We lopen kort door je huidige situatie, je doelen en wat je
                 belangrijk vindt in een samenwerking. Op basis daarvan krijg je
-                een concreet voorstel hoe je website en automatisatie er zouden
-                kunnen uitzien.
+                een concreet voorstel hoe je website en aanpak er beter kunnen uitzien.
               </p>
             </div>
 
