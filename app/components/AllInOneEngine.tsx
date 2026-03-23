@@ -4,19 +4,41 @@ export default function AllInOneEngine() {
   const capabilities = [
     {
       title: "Design dat overtuigt.",
-      description: "Wij bouwen sites die ademen (zoals KH-Reflexologie). Geen templates, maar maatwerk dat jouw merk autoriteit geeft.",
+      description:
+        "Wij bouwen sites die ademen (zoals KH-Reflexologie). Geen templates, maar maatwerk dat jouw merk autoriteit geeft.",
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+          />
         </svg>
       ),
     },
     {
       title: "Systemen die ontlasten.",
-      description: "Van Airtable CRM's (zoals Dakralux) tot slimme boekingsflows. Wij automatiseren de rompslomp zodat jij je handen vrij hebt.",
+      description:
+        "Van Airtable CRM's (zoals Dakralux) tot slimme boekingsflows. Wij automatiseren de rompslomp zodat jij je handen vrij hebt.",
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          />
         </svg>
       ),
     },
@@ -26,17 +48,19 @@ export default function AllInOneEngine() {
     <section className="relative z-10 px-6 md:px-12 lg:px-16 py-6 md:py-8">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-10" />
-      
-      {/* Dark Blue Glow Background */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-blue-800/10 to-transparent" />
-      
+
+      {/* White Glow Background */}
+      <div className="absolute inset-0 bg-gradient-radial from-white/16 via-white/8 to-transparent" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[780px] h-[420px] rounded-full bg-white/10 blur-[140px]" />
+
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-8 animate-fade-in">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">
             Design dat verkoopt. Systemen die meewerken.
           </h2>
           <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto tracking-tight">
-            Van websites op maat tot slimme koppelingen en workflows – modulair opgebouwd, alleen wat jouw business nodig heeft.
+            Van websites op maat tot slimme koppelingen en workflows – modulair
+            opgebouwd, alleen wat jouw business nodig heeft.
           </p>
         </div>
 

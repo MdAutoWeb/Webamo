@@ -78,8 +78,9 @@ export default function PortfolioShowcase() {
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-10" />
       
-      {/* Blue Radial Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-radial from-blue-500/10 via-blue-500/5 to-transparent" />
+      {/* White Radial Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-radial from-white/14 via-white/7 to-transparent" />
+      <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[820px] h-[420px] rounded-full bg-white/10 blur-[140px]" />
       
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Split-screen Grid */}
@@ -134,7 +135,7 @@ export default function PortfolioShowcase() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
           {/* 3x */}
           <div className="text-center animate-fade-in">
-            <div className="text-3xl md:text-4xl font-black text-blue-500 mb-1 leading-none tracking-tight">
+            <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-none tracking-tight drop-shadow-[0_0_12px_rgba(255,255,255,0.28)]">
               <CountUp end={3} />x
             </div>
             <p className="text-white/70 text-xs mt-1">Meer Leads</p>
@@ -144,7 +145,7 @@ export default function PortfolioShowcase() {
 
           {/* 80% */}
           <div className="text-center animate-fade-in-delay">
-            <div className="text-3xl md:text-4xl font-black text-blue-500 mb-1 leading-none tracking-tight">
+            <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-none tracking-tight drop-shadow-[0_0_12px_rgba(255,255,255,0.28)]">
               <CountUp end={80} duration={2.5} />%
             </div>
             <p className="text-white/70 text-xs mt-1">Tijdsbesparing</p>
@@ -154,7 +155,7 @@ export default function PortfolioShowcase() {
 
           {/* 24/7 */}
           <div className="text-center animate-fade-in-delay-2">
-            <div className="text-3xl md:text-4xl font-black text-blue-500 mb-1 leading-none tracking-tight">
+            <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-none tracking-tight drop-shadow-[0_0_12px_rgba(255,255,255,0.28)]">
               24/7
             </div>
             <p className="text-white/70 text-xs mt-1">Bereikbaar</p>

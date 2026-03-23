@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
 import AllInOneEngine from "./components/AllInOneEngine";
 import SystemFlow from "./components/SystemFlow";
 import PortfolioShowcase from "./components/PortfolioShowcase";
 import Footer from "./components/Footer";
+import { SplineSceneBasic } from "@/components/ui/demo";
 
 export const metadata: Metadata = {
   title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
@@ -39,7 +39,9 @@ export default function Page() {
   return (
     <main className="relative z-10 bg-black">
       <Header />
-      <Hero />
+      <section className="relative z-10 px-6 md:px-12 lg:px-16 pt-20 md:pt-24 pb-8 md:pb-10 overflow-hidden">
+        <SplineSceneBasic />
+      </section>
       <AllInOneEngine />
       <SystemFlow />
       <PortfolioShowcase />

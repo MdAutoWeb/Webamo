@@ -185,3 +185,38 @@ select option {
 select:focus option:checked {
   background-color: rgba(37, 99, 235, 0.2) !important;
 }
+
+/* Spline fallback loader */
+.loader {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 3px solid rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  animation: loader-spin 1s linear infinite;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2.5s ease-in-out infinite;
+}
