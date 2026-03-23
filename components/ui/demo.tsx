@@ -6,9 +6,9 @@ import { Spotlight } from "@/components/ui/spotlight"
 
 export function SplineSceneBasic() {
   return (
-    <Card className="w-full h-auto md:h-[500px] relative overflow-hidden border-0 shadow-none rounded-none bg-transparent">
+    <Card className="w-full h-auto md:h-[500px] relative overflow-visible md:overflow-hidden border-0 shadow-none rounded-none bg-transparent">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="rgba(255,255,255,0.55)" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/88 via-black/78 to-black/88" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/58 to-black/70 md:from-black/88 md:via-black/78 md:to-black/88" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(255,255,255,0.015),transparent_62%),radial-gradient(ellipse_at_80%_20%,rgba(255,255,255,0.015),transparent_58%)]" />
 
       <div className="flex flex-col-reverse md:flex-row h-full relative z-10">
@@ -56,23 +56,13 @@ export function SplineSceneBasic() {
           </div>
         </div>
 
-        <div className="flex-1 relative h-[260px] sm:h-[320px] md:h-auto md:-ml-14">
-          <div
-            className="absolute inset-0"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(to right, black 0%, black 100%)",
-              maskImage: "linear-gradient(to right, black 0%, black 100%)",
-              opacity: 0.94,
-            }}
-          >
-            <SplineScene
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-            />
-          </div>
+        <div className="flex-1 relative h-[300px] sm:h-[380px] md:h-auto md:-ml-14">
+          <SplineScene
+            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            className="w-full h-full"
+          />
         </div>
-        <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-r from-black/18 via-transparent to-black/18" />
+        <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-r from-black/10 via-transparent to-black/10 md:from-black/18 md:to-black/18" />
         <div className="hidden md:block pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-20 md:w-28 bg-gradient-to-r from-transparent via-black/70 to-transparent blur-2xl" />
       </div>
     </Card>
