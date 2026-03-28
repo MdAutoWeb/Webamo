@@ -1,0 +1,28 @@
+# Webamo
+> High-end webdesign en bedrijfsautomatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen.
+
+Webamo is een web design en automatisatie bureau gevestigd in Brugge, België.
+Actief in Brugge, Gent, Antwerpen en heel Vlaanderen.
+
+## Diensten
+- Professionele websites voor zelfstandigen en KMO's
+- Conversie-gerichte webdesign met focus op leads en afspraken
+- Bedrijfsautomatisatie via Airtable en CRM-systemen
+- Workflow automatisatie en lead management
+
+## Cases
+- KH-Reflexologie: high-end webdesign met focus op conversie
+- Dakralux: Airtable CRM integratie met lead management voor een dakwerkbedrijf
+
+## Doelregio
+Brugge, Gent, Antwerpen, Vlaanderen, België
+
+## Contact
+info@webamo.be | +32 493 527 360 | https://www.webamo.be/contact
+
+## Pagina's
+- / — Homepage: overzicht van webdesign en automatisatie diensten
+- /diensten — Dienstenoverzicht: websites en automatisatie
+- /contact — Contactformulier en gratis audit aanvragen
+- /website-dakwerker-brugge — Websites voor dakwerkers in Brugge
+- /website-kinesist-brugge — Websites voor kinesisten in Brugge

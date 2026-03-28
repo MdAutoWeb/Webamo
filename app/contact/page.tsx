@@ -7,13 +7,6 @@ export const metadata: Metadata = {
   title: "Contact - Gratis Intakegesprek | Webamo",
   description:
     "Plan een gratis intakegesprek met Webamo. In 15-20 minuten bespreken we wat er mogelijk is voor jouw website en automatisatie. Geen verplichtingen.",
-  keywords: [
-    "contact webamo",
-    "intakegesprek website",
-    "gratis consultatie website",
-    "website offerte aanvragen",
-    "webdesign consultatie",
-  ],
   alternates: {
     canonical: "/contact",
   },
@@ -21,7 +14,7 @@ export const metadata: Metadata = {
     title: "Contact - Gratis Intakegesprek | Webamo",
     description:
       "Plan een gratis intakegesprek. Bespreek je website en automatisatie project.",
-    url: "https://webamo.be/contact",
+    url: "https://www.webamo.be/contact",
   },
 };
 

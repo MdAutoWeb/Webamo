@@ -20,16 +20,16 @@ function CountUp({ end, duration = 2, suffix = "" }: { end: number; duration?: n
             const animate = (currentTime: number) => {
               if (!startTime) startTime = currentTime;
               const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-              
+
               setCount(Math.floor(progress * end));
-              
+
               if (progress < 1) {
                 requestAnimationFrame(animate);
               } else {
                 setCount(end);
               }
             };
-            
+
             requestAnimationFrame(animate);
           }
         });
@@ -77,12 +77,18 @@ export default function PortfolioShowcase() {
     <section className="relative z-10 px-6 md:px-12 lg:px-16 py-6 md:py-8 section-glow">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid opacity-10" />
-      
+
       {/* White Radial Gradient Background */}
       <div className="absolute inset-0 bg-gradient-radial from-white/14 via-white/7 to-transparent" />
       <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[820px] h-[420px] rounded-full bg-white/10 blur-[140px]" />
-      
+
       <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="text-center mb-6">
+          <h2 className="text-lg md:text-xl font-bold text-white tracking-tight">
+            Onze Cases: Design &amp; Automatisatie in de Praktijk
+          </h2>
+        </div>
+
         {/* Split-screen Grid */}
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           {projects.map((project, index) => (
@@ -111,9 +117,9 @@ export default function PortfolioShowcase() {
 
                 {/* Text & Tags */}
                 <div className="text-center">
-                  <p className="text-white/80 text-sm md:text-base font-medium mb-2 group-hover:text-blue-500 transition-colors tracking-tight">
+                  <h3 className="text-white/80 text-sm md:text-base font-medium mb-2 group-hover:text-blue-500 transition-colors tracking-tight">
                     {project.name}
-                  </p>
+                  </h3>
                   {/* Technical Tags */}
                   <div className="flex flex-wrap items-center justify-center gap-1.5">
                     {project.tags.map((tag, tagIndex) => (
@@ -131,7 +137,7 @@ export default function PortfolioShowcase() {
           ))}
         </div>
 
-        {/* Stats without Blue Frame */}
+        {/* Stats */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
           {/* 3x */}
           <div className="text-center animate-fade-in">

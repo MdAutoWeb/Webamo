@@ -6,11 +6,6 @@ export const metadata: Metadata = {
   title: "Website dakwerker Brugge | Meer offerte-aanvragen via Webamo",
   description:
     "Meer offerte-aanvragen voor dakwerkers in Brugge dankzij een duidelijke website die klanten naar contact leidt.",
-  keywords: [
-    "website dakwerker Brugge",
-    "webdesign dakwerker Brugge",
-    "meer offertes dakwerker Brugge",
-  ],
   alternates: {
     canonical: "/website-dakwerker-brugge",
   },
@@ -18,13 +13,26 @@ export const metadata: Metadata = {
     title: "Website dakwerker Brugge | Meer offerte-aanvragen via Webamo",
     description:
       "Webamo helpt dakwerkers in Brugge aan meer offerte-aanvragen via een duidelijke website die gericht is op contact en aanvragen.",
-    url: "https://webamo.be/website-dakwerker-brugge",
+    url: "https://www.webamo.be/website-dakwerker-brugge",
   },
 };
 
 export default function WebsiteDakwerkerBruggePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.webamo.be/" },
+      { "@type": "ListItem", position: 2, name: "Website voor dakwerker Brugge", item: "https://www.webamo.be/website-dakwerker-brugge" },
+    ],
+  };
+
   return (
     <main className="relative z-10 bg-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       {/* 1. Hero */}

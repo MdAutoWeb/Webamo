@@ -10,20 +10,6 @@ export const metadata: Metadata = {
   title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
   description:
     "Op zoek naar een webdesigner in Brugge of Vlaanderen? Webamo bouwt high-end websites en slimme automatisaties (CRM, Airtable) die je business doen groeien. Ontdek onze cases.",
-  keywords: [
-    "webdesigner brugge",
-    "website laten maken brugge",
-    "automatisatie brugge",
-    "webdesign vlaanderen",
-    "airtable specialist belgië",
-    "automatisatie voor KMO's",
-    "website maken vlaanderen",
-    "webdesigner west-vlaanderen",
-    "CRM integratie brugge",
-    "business automatisatie belgië",
-    "webdesigner gent",
-    "webdesigner antwerpen",
-  ],
   alternates: {
     canonical: "/",
   },
@@ -31,7 +17,7 @@ export const metadata: Metadata = {
     title: "Webamo | High-End Websites & Automatisatie Brugge & Vlaanderen",
     description:
       "Webdesigner in Brugge en Vlaanderen. High-end websites en slimme automatisaties (CRM, Airtable) die je business doen groeien.",
-    url: "https://webamo.be",
+    url: "https://www.webamo.be",
   },
 };
 

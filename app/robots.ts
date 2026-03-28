@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [],
       },
     ],
-    sitemap: "https://webamo.be/sitemap.xml",
+    sitemap: "https://www.webamo.be/sitemap.xml",
   };
 }

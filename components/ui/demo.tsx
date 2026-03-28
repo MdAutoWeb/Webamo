@@ -11,7 +11,7 @@ export function SplineSceneBasic() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-black/58 to-black/70 md:from-black/88 md:via-black/78 md:to-black/88" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(255,255,255,0.015),transparent_62%),radial-gradient(ellipse_at_80%_20%,rgba(255,255,255,0.015),transparent_58%)]" />
 
-      <div className="flex flex-col-reverse md:flex-row h-full relative z-10">
+      <div className="flex flex-col md:flex-row h-full relative z-10">
         <div className="flex-1 p-6 md:p-8 md:pr-2 relative z-10 flex flex-col justify-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-black/45 backdrop-blur-sm mb-5 w-fit">
             <span className="text-[11px] text-white/70 tracking-tight uppercase">
@@ -28,7 +28,7 @@ export function SplineSceneBasic() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-[1.05] tracking-tight mb-4 gradient-text-hero">
-            High-end webdesign & business automatisatie in Vlaanderen.
+            High-end webdesign & business automatisatie in Brugge & Vlaanderen.
           </h1>
 
           <p className="text-sm md:text-base text-white/70 leading-relaxed max-w-2xl mb-6 tracking-tight">
@@ -43,13 +43,13 @@ export function SplineSceneBasic() {
             </div>
             <a
               href="/contact"
-              className="relative button-glow px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-xs transition-all hover:scale-105 tracking-tight"
+              className="relative button-glow px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-500 to-violet-500 text-white font-semibold text-sm transition-all hover:scale-105 tracking-tight"
             >
-              Start je project
+              Start je project – Gratis intakegesprek
             </a>
             <a
               href="/diensten"
-              className="relative px-5 py-2.5 rounded-lg border border-white/20 text-white font-semibold text-xs hover:bg-white/5 transition-all tracking-tight"
+              className="relative px-5 py-2.5 rounded-lg border border-white/20 text-white font-semibold text-sm hover:bg-white/5 transition-all tracking-tight"
             >
               Bekijk de cases
             </a>
@@ -68,4 +68,3 @@ export function SplineSceneBasic() {
     </Card>
   )
 }
-

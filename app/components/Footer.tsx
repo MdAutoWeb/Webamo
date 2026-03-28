@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,9 +12,11 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12 mb-12">
             {/* Brand Section */}
             <Link href="/" className="flex w-full justify-center md:w-auto md:justify-start">
-              <img
+              <Image
                 src="/images/Webamo-logo.png"
                 alt="Webamo"
+                width={192}
+                height={96}
                 className="h-16 md:h-24 w-auto block"
                 style={{
                   filter: "drop-shadow(0 0 15px rgba(59, 130, 246, 0.7))",
@@ -51,6 +54,21 @@ export default function Footer() {
 
             {/* Contact Section */}
             <div className="flex flex-col items-center md:items-end gap-3">
+              {/* Contact Links */}
+              <div className="flex flex-col items-center md:items-end gap-2">
+                <a
+                  href="tel:+32493527360"
+                  className="text-white/60 hover:text-white text-sm transition-colors"
+                >
+                  +32 493 527 360
+                </a>
+                <a
+                  href="mailto:info@webamo.be"
+                  className="text-white/60 hover:text-white text-sm transition-colors"
+                >
+                  info@webamo.be
+                </a>
+              </div>
               {/* Social Icons */}
               <div className="flex items-center gap-4">
                 <a
@@ -112,7 +130,9 @@ export default function Footer() {
           {/* SEO Text Block */}
           <div className="mb-8 pt-8 border-t border-white/10">
             <p className="text-white/50 text-xs text-center max-w-3xl mx-auto leading-relaxed">
-              Webamo: Jouw partner voor webdesign en automatisatie in Brugge, Gent, Antwerpen en heel Vlaanderen.
+              Webamo: Jouw partner voor webdesign en automatisatie in Brugge, Oostkamp, Zedelgem, Gent, Antwerpen en heel Vlaanderen.{" "}
+              <a href="/website-dakwerker-brugge" className="underline hover:text-white/70 transition-colors">Website voor dakwerkers in Brugge</a>{" "}·{" "}
+              <a href="/website-kinesist-brugge" className="underline hover:text-white/70 transition-colors">Website voor kinesisten in Brugge</a>.
             </p>
           </div>
 

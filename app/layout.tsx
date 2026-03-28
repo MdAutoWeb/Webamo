@@ -5,11 +5,13 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -19,24 +21,10 @@ export const metadata: Metadata = {
   },
   description:
     "Webamo bouwt moderne websites en slimme automatisatie voor zelfstandigen en KMO's in Brugge en Vlaanderen. Webdesign, CRM-koppelingen en e-mailautomatisatie op maat.",
-  keywords: [
-    "webdesign Brugge",
-    "website laten maken Brugge",
-    "webdesigner Brugge",
-    "webdesign West-Vlaanderen",
-    "website voor zelfstandigen",
-    "website voor KMO",
-    "webdesign voor zelfstandigen",
-    "CRM integratie",
-    "e-mailautomatisatie",
-    "business automatisatie",
-    "website met automatisatie",
-    "conversiegerichte website",
-  ],
-  authors: [{ name: "Maikel", url: "https://webamo.be" }],
+  authors: [{ name: "Maikel", url: "https://www.webamo.be" }],
   creator: "Webamo",
   publisher: "Webamo",
-  metadataBase: new URL("https://webamo.be"),
+  metadataBase: new URL("https://www.webamo.be"),
   alternates: {
     canonical: "/",
   },
@@ -55,11 +43,11 @@ export const metadata: Metadata = {
     title: "Webamo - Websites & Automatisatie voor Zelfstandigen | België",
     description:
       "Moderne websites met slimme automatisatie voor zelfstandigen en KMO's. Conversiegerichte websites, CRM-koppelingen en e-mailautomatisatie. Gratis intakegesprek.",
-    url: "https://webamo.be",
+    url: "https://www.webamo.be",
     siteName: "Webamo",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/Webamo-OG.png",
         width: 1200,
         height: 630,
         alt: "Webamo - Websites & Automatisatie",
@@ -73,7 +61,7 @@ export const metadata: Metadata = {
     title: "Webamo - Websites & Automatisatie voor Zelfstandigen",
     description:
       "Moderne websites met slimme automatisatie voor zelfstandigen en KMO's in België.",
-    images: ["/images/logo.png"],
+    images: ["/images/Webamo-OG.png"],
   },
 };
 
@@ -83,93 +71,119 @@ export default function RootLayout({
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://webamo.be/#organization",
+    "@id": "https://www.webamo.be/#organization",
     name: "Webamo",
     description:
       "Webamo bouwt high-end websites en slimme automatisaties (CRM, Airtable) voor KMO's en zelfstandigen in Brugge en heel Vlaanderen.",
-    url: "https://webamo.be",
-    logo: "https://webamo.be/images/logo.png",
-    image: "https://webamo.be/images/logo.png",
+    url: "https://www.webamo.be",
+    logo: "https://www.webamo.be/images/Webamo-logo.png",
+    image: "https://www.webamo.be/images/Webamo-logo.png",
     email: "info@webamo.be",
+    telephone: "+32493527360",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Brugge",
+      addressLocality: "Oostkamp",
       addressRegion: "West-Vlaanderen",
+      postalCode: "8020",
       addressCountry: "BE",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "51.2093",
-      longitude: "3.2247",
+      latitude: "51.15504",
+      longitude: "3.23498",
     },
     areaServed: [
-      {
-        "@type": "City",
-        name: "Brugge",
-      },
-      {
-        "@type": "City",
-        name: "Gent",
-      },
-      {
-        "@type": "City",
-        name: "Antwerpen",
-      },
-      {
-        "@type": "State",
-        name: "Vlaanderen",
-      },
+      { "@type": "City", name: "Oostkamp" },
+      { "@type": "City", name: "Brugge" },
+      { "@type": "City", name: "Zedelgem" },
+      { "@type": "City", name: "Beernem" },
+      { "@type": "City", name: "Gent" },
+      { "@type": "City", name: "Antwerpen" },
+      { "@type": "State", name: "Vlaanderen" },
     ],
     priceRange: "$$",
-    sameAs: [
-      "https://www.linkedin.com/company/webamo"
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
     ],
+    sameAs: [
+      "https://www.linkedin.com/company/webamo",
+      "https://www.google.com/maps/place/Webamo/@51.0963082,4.2262283,17z/data=!3m1!4b1!4m6!3m5!1s0xa773ad8d9deb755d:0xcf40ea653a30117c",
+    ],
+    founder: {
+      "@type": "Person",
+      name: "Maikel",
+      url: "https://www.webamo.be",
+    },
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://www.webamo.be/#service",
+    name: "Webdesign en bedrijfsautomatisatie",
     serviceType: "Webdesign en bedrijfsautomatisatie",
-    provider: {
-      "@type": "LocalBusiness",
-      name: "Webamo",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Brugge",
-        addressRegion: "West-Vlaanderen",
-        addressCountry: "BE",
-      },
-    },
-    areaServed: {
-      "@type": "State",
-      name: "Vlaanderen",
-    },
+    url: "https://www.webamo.be/diensten",
     description:
       "High-end webdesign en business automatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen. Websites, CRM integratie (Airtable), en workflow automatisatie.",
+    provider: {
+      "@id": "https://www.webamo.be/#organization",
+    },
+    areaServed: [
+      { "@type": "City", name: "Brugge" },
+      { "@type": "City", name: "Gent" },
+      { "@type": "City", name: "Antwerpen" },
+      { "@type": "State", name: "Vlaanderen" },
+    ],
     offers: {
       "@type": "Offer",
       description: "Gratis intakegesprek voor nieuwe klanten",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.webamo.be/#website",
+    url: "https://www.webamo.be",
+    name: "Webamo",
+    description:
+      "Webdesign en automatisatie voor zelfstandigen en KMO's in Brugge en Vlaanderen.",
+    inLanguage: "nl-BE",
+    publisher: {
+      "@id": "https://www.webamo.be/#organization",
     },
   };
 
   return (
     <html lang="nl-BE">
       <head>
+        <link rel="preconnect" href="https://prod.spline.design" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-black text-white`}
       >
-        <div className="relative min-h-screen overflow-hidden">
-          {children}
-        </div>
+        <div className="relative min-h-screen overflow-hidden">{children}</div>
       </body>
     </html>
   );

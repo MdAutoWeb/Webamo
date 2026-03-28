@@ -6,11 +6,6 @@ export const metadata: Metadata = {
   title: "Website kinesist Brugge | Meer afspraken via Webamo",
   description:
     "Meer afspraken voor kinesisten in Brugge dankzij een duidelijke website met online booking.",
-  keywords: [
-    "website kinesist Brugge",
-    "webdesign kinesist Brugge",
-    "meer afspraken kinesist Brugge",
-  ],
   alternates: {
     canonical: "/website-kinesist-brugge",
   },
@@ -18,13 +13,26 @@ export const metadata: Metadata = {
     title: "Website kinesist Brugge | Meer afspraken via Webamo",
     description:
       "Webamo helpt kinesisten in Brugge aan meer afspraken met een rustige, duidelijke website die patiënten direct naar een afspraak leidt.",
-    url: "https://webamo.be/website-kinesist-brugge",
+    url: "https://www.webamo.be/website-kinesist-brugge",
   },
 };
 
 export default function WebsiteKinesistBruggePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.webamo.be/" },
+      { "@type": "ListItem", position: 2, name: "Website voor kinesist Brugge", item: "https://www.webamo.be/website-kinesist-brugge" },
+    ],
+  };
+
   return (
     <main className="relative z-10 bg-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       {/* 1. Hero */}
