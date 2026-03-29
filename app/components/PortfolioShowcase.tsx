@@ -3,7 +3,15 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function CountUp({ end, duration = 2, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+function CountUp({
+  end,
+  duration = 2,
+  suffix = "",
+}: {
+  end: number;
+  duration?: number;
+  suffix?: string;
+}) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +27,10 @@ function CountUp({ end, duration = 2, suffix = "" }: { end: number; duration?: n
             let startTime: number;
             const animate = (currentTime: number) => {
               if (!startTime) startTime = currentTime;
-              const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
+              const progress = Math.min(
+                (currentTime - startTime) / (duration * 1000),
+                1,
+              );
 
               setCount(Math.floor(progress * end));
 
@@ -34,7 +45,7 @@ function CountUp({ end, duration = 2, suffix = "" }: { end: number; duration?: n
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (ref.current) {
@@ -50,7 +61,8 @@ function CountUp({ end, duration = 2, suffix = "" }: { end: number; duration?: n
 
   return (
     <div ref={ref} className="inline-block">
-      {count}{suffix}
+      {count}
+      {suffix}
     </div>
   );
 }
@@ -67,7 +79,7 @@ export default function PortfolioShowcase() {
     {
       name: "Dakralux",
       url: "https://www.dakralux.be",
-      image: "/images/Dakralux.png",
+      image: "/images/Dakralux-demo.png",
       alt: "Airtable CRM integratie Dakralux - Webamo Automatisatie België",
       tags: ["Business Engine", "Airtable CRM Integration", "Lead Management"],
     },
