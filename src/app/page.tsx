@@ -6,23 +6,8 @@ import DienstenSection from "@/components/sections/DienstenSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import CasesSection from "@/components/sections/CasesSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
-import HomeLocalSection from "@/components/sections/HomeLocalSection";
-import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import FadeUp from "@/components/ui/FadeUp";
-import { faqGeneral } from "@/lib/data";
-
-const homeFaq = faqGeneral.slice(0, 4);
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: homeFaq.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
 
 export const metadata: Metadata = {
   title: "Website laten maken Brugge & West-Vlaanderen",
@@ -40,10 +25,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
       <Hero />
       <FadeUp>
         <SocialProofBar />
@@ -62,12 +43,6 @@ export default function HomePage() {
       </FadeUp>
       <FadeUp>
         <TestimonialSection />
-      </FadeUp>
-      <FadeUp>
-        <HomeLocalSection />
-      </FadeUp>
-      <FadeUp>
-        <FAQSection items={homeFaq} />
       </FadeUp>
       <FadeUp>
         <CTASection />
