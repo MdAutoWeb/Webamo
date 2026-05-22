@@ -1,28 +1,31 @@
 # Webamo
-> High-end webdesign en bedrijfsautomatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen.
+> Webdesign en bedrijfsautomatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen.
 
-Webamo is een web design en automatisatie bureau gevestigd in Brugge, België.
-Actief in Brugge, Gent, Antwerpen en heel Vlaanderen.
+Webamo is een webdesign en automatisatie bureau gevestigd in Brugge, België.
+Actief in Brugge, West-Vlaanderen en heel Vlaanderen.
 
 ## Diensten
 - Professionele websites voor zelfstandigen en KMO's
-- Conversie-gerichte webdesign met focus op leads en afspraken
+- Conversiegerichte webdesign met focus op leads en afspraken
 - Bedrijfsautomatisatie via Airtable en CRM-systemen
-- Workflow automatisatie en lead management
+- Lokale SEO en Google Business Profile optimalisatie
 
 ## Cases
-- KH-Reflexologie: high-end webdesign met focus op conversie
-- Dakralux: Airtable CRM integratie met lead management voor een dakwerkbedrijf
+- KH-Reflexologie: webdesign voor reflexologiepraktijk in Brugge
+- Dakralux: website + Airtable CRM voor dakwerkbedrijf in West-Vlaanderen
 
 ## Doelregio
-Brugge, Gent, Antwerpen, Vlaanderen, België
+Brugge, West-Vlaanderen, Vlaanderen, België
 
 ## Contact
-info@webamo.be | +32 493 527 360 | https://www.webamo.be/contact
+info@webamo.be | +32 493 527 360 | https://webamo.be/contact
 
 ## Pagina's
-- / — Homepage: overzicht van webdesign en automatisatie diensten
-- /diensten — Dienstenoverzicht: websites en automatisatie
-- /contact — Contactformulier en gratis audit aanvragen
-- /website-dakwerker-brugge — Websites voor dakwerkers in Brugge
-- /website-kinesist-brugge — Websites voor kinesisten in Brugge
+- / — Homepage: webdesign en automatisatie voor kleine bedrijven
+- /diensten — Websites, lokale SEO en automation
+- /cases — Portfolio met resultaten
+- /tarieven — Prijzen en pakketten (BASIS, Starter, Groei)
+- /contact — Gratis gesprek plannen
+- /webdesign-brugge — Website laten maken in Brugge
+- /privacy — Privacybeleid
+- /cookies — Cookiebeleid

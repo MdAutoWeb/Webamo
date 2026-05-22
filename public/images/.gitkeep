@@ -1,0 +1,6 @@
+# Zet afbeeldingen hier:
+#   brand/  → logo, social preview (OG)
+#   cases/  → screenshots van klantprojecten
+#
+# In code: import { images, imageSrc } from "@/lib/images"
+# Voorbeeld: imageSrc("cases", "mijn-project.png")
