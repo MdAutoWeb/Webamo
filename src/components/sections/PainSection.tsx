@@ -1,3 +1,5 @@
+import MobileSwipeRow from "@/components/ui/MobileSwipeRow";
+
 const pains = [
   {
     icon: (
@@ -38,9 +40,9 @@ export default function PainSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <MobileSwipeRow desktopCols="md:grid-cols-3">
         {pains.map(({ icon, title, body }) => (
-          <div key={title} className="bg-[#F5F5F5] rounded-[16px] p-7">
+          <div key={title} className="bg-[#F5F5F5] rounded-[16px] p-7 h-full">
             <div className="w-11 h-11 rounded-[10px] bg-white border border-[#E5E7EB] flex items-center justify-center text-[#6B7280] mb-5">
               {icon}
             </div>
@@ -48,7 +50,7 @@ export default function PainSection() {
             <p className="text-[14px] text-[#6B7280] leading-[1.6]">{body}</p>
           </div>
         ))}
-      </div>
+      </MobileSwipeRow>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import MobileSwipeRow from "@/components/ui/MobileSwipeRow";
 
 const diensten: { tag: string; title: string; body: string; href: string }[] = [
   {
@@ -54,15 +55,20 @@ export default function DienstenSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {diensten.map(({ tag, title, body, href }, i) => (
+        <MobileSwipeRow desktopCols="md:grid-cols-2 lg:grid-cols-4" itemWidth="w-[min(85vw,280px)]">
+          {diensten.map(({ tag, title, body, href }) => (
             <motion.div
               key={title}
-              whileHover={reduced ? undefined : {
-                y: -4,
-                boxShadow: "0 12px 32px -8px rgba(10,10,10,.12)",
-                transition: { duration: 0.2, ease: "easeOut" },
-              }}
+              className="h-full"
+              whileHover={
+                reduced
+                  ? undefined
+                  : {
+                      y: -4,
+                      boxShadow: "0 12px 32px -8px rgba(10,10,10,.12)",
+                      transition: { duration: 0.2, ease: "easeOut" },
+                    }
+              }
             >
               <Link
                 href={href}
@@ -82,7 +88,7 @@ export default function DienstenSection() {
               </Link>
             </motion.div>
           ))}
-        </div>
+        </MobileSwipeRow>
       </div>
     </section>
   );

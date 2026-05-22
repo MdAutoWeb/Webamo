@@ -1,3 +1,5 @@
+import MobileSwipeRow from "@/components/ui/MobileSwipeRow";
+
 const steps = [
   {
     num: "01",
@@ -27,15 +29,15 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <MobileSwipeRow desktopCols="md:grid-cols-3" hintClassName="text-white/35">
           {steps.map(({ num, title, body }) => (
-            <div key={num} className="border border-white/10 rounded-[16px] p-7">
+            <div key={num} className="border border-white/10 rounded-[16px] p-7 h-full">
               <div className="font-bold text-[40px] tracking-[-0.04em] text-[#2563EB] mb-5 leading-none">{num}</div>
               <h3 className="font-semibold text-[18px] text-white tracking-[-0.01em] mb-2">{title}</h3>
               <p className="text-[14px] text-white/50 leading-[1.6]">{body}</p>
             </div>
           ))}
-        </div>
+        </MobileSwipeRow>
       </div>
     </section>
   );

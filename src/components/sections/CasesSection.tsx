@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CaseCard from "@/components/ui/CaseCard";
+import MobileSwipeRow from "@/components/ui/MobileSwipeRow";
 import { cases } from "@/lib/data";
 
 export default function CasesSection() {
@@ -23,11 +24,11 @@ export default function CasesSection() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <MobileSwipeRow desktopCols="md:grid-cols-2" itemWidth="w-[min(92vw,340px)]">
         {cases.map((c) => (
           <CaseCard key={c.slug} c={c} />
         ))}
-      </div>
+      </MobileSwipeRow>
     </section>
   );
 }

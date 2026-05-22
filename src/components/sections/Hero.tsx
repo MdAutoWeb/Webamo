@@ -30,7 +30,7 @@ export default function Hero() {
           <motion.h1
             initial={reduced ? false : hidden}
             animate={visible(0.1)}
-            className="font-bold text-[42px] md:text-[52px] tracking-[-0.03em] leading-[1.05] mb-5"
+            className="font-bold text-[36px] sm:text-[42px] md:text-[52px] tracking-[-0.03em] leading-[1.05] mb-5"
           >
             Minder rompslomp.<br />
             <span className="text-[#2563EB]">Meer klanten.</span>

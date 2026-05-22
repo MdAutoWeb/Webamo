@@ -3,7 +3,7 @@ import { images } from "@/lib/images";
 
 export default function BrowserMockup() {
   return (
-    <div className="relative pb-8 pr-5">
+    <div className="relative pb-8 pr-0 md:pr-5 max-w-full overflow-hidden">
       <div className="bg-white border border-[#E5E7EB] rounded-[20px] overflow-hidden shadow-[0_24px_48px_-16px_rgba(10,10,10,.15),0_8px_16px_-8px_rgba(10,10,10,.08)]">
         <div className="flex items-center gap-[14px] px-4 py-3 border-b border-[#E5E7EB] bg-[#fafafa]">
           <div className="flex gap-[6px]">
