@@ -169,7 +169,10 @@ export const faqGeneral: FaqItem[] = [
   { q: "Hoe lang duurt het om een site te bouwen?", a: "Gemiddeld 1 tot 2 weken. Sneller dan agencies, zonder kwaliteitsverlies." },
   { q: "Zit domein en hosting inbegrepen?", a: "Ja, alles all-in. €45/m dekt domein, hosting, SSL, backups en onderhoud. Geen verborgen kosten, nooit." },
   { q: "Kan ik later upgraden?", a: "Altijd. Begin met BASIS, schaal naar STARTER of GROEI wanneer je klaar bent. Je betaalt enkel het verschil." },
-  { q: "Werk je alleen in Brugge?", a: "Nee, heel Vlaanderen. Maar we kennen de lokale markt in Brugge en West-Vlaanderen het beste." },
+  {
+    q: "Werk je alleen in Brugge?",
+    a: "Nee, heel Vlaanderen. We werken het meest in Brugge, Oostkamp en West-Vlaanderen, maar ook daarbuiten.",
+  },
   { q: "Wat als ik al een website heb?", a: "Dan kijken we eerst wat ontbreekt. Soms is enkel automatisatie genoeg om dezelfde site veel meer te laten opbrengen." },
 ];
 

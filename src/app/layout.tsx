@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Webamo",
   },
   description:
-    "Webamo bouwt conversiegerichte websites en automations voor kleine bedrijven in Brugge en Vlaanderen. Meer leads, minder handmatig werk.",
+    "Website laten maken in Brugge en West-Vlaanderen? Webamo bouwt conversiegerichte websites en automatisatie voor KMO's. Meer leads, minder handmatig werk.",
   metadataBase: new URL("https://webamo.be"),
   openGraph: {
     siteName: "Webamo",
@@ -29,7 +29,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://webamo.be" },
   manifest: "/manifest.webmanifest",
   icons: {
-    apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
+    icon: [
+      { url: images.brand.favicon, sizes: "32x32", type: "image/png" },
+      { url: images.brand.favicon, sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: images.brand.favicon, sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -61,6 +65,7 @@ const jsonLdOrg = {
   },
   areaServed: [
     { "@type": "City", name: "Brugge" },
+    { "@type": "City", name: "Oostkamp" },
     { "@type": "AdministrativeArea", name: "West-Vlaanderen" },
     { "@type": "AdministrativeArea", name: "Vlaanderen" },
   ],

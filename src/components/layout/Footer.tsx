@@ -5,6 +5,7 @@ const nav = [
   { href: "/diensten", label: "Diensten" },
   { href: "/cases", label: "Cases" },
   { href: "/tarieven", label: "Tarieven" },
+  { href: "/webdesign-brugge", label: "Webdesign Brugge" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -17,7 +18,7 @@ export default function Footer() {
           <div>
             <Logo href="/" variant="dark" />
             <p className="mt-4 text-[13px] text-white/50 leading-[1.7] max-w-[260px]">
-              Websites en automatisaties voor kleine bedrijven in Brugge en heel Vlaanderen.
+              Websites en automatisaties voor kleine bedrijven in Brugge, Oostkamp, West-Vlaanderen en Vlaanderen.
             </p>
           </div>
 

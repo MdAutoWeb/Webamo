@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import BrowserMockup from "@/components/ui/BrowserMockup";
@@ -41,7 +42,11 @@ export default function Hero() {
             animate={visible(0.2)}
             className="text-[16px] text-[#6B7280] leading-[1.65] mb-8 max-w-[460px]"
           >
-            Wij bouwen websites en automatisaties voor kleine bedrijven, zodat jij gevonden wordt, leads binnenkomen en jij je focust op je vak.
+            Wij bouwen websites en automatisaties voor kleine bedrijven in Brugge en West-Vlaanderen,
+            zodat jij gevonden wordt, leads binnenkomen en jij je focust op je vak.{" "}
+            <Link href="/webdesign-brugge" className="text-[#2563EB] font-medium hover:underline">
+              Website laten maken in Brugge
+            </Link>
           </motion.p>
 
           <motion.div

@@ -2,7 +2,7 @@
 > Webdesign en bedrijfsautomatisatie voor KMO's en zelfstandigen in Brugge en Vlaanderen.
 
 Webamo is een webdesign en automatisatie bureau gevestigd in Brugge, België.
-Actief in Brugge, West-Vlaanderen en heel Vlaanderen.
+Actief in Brugge, Oostkamp, West-Vlaanderen en heel Vlaanderen.
 
 ## Diensten
 - Professionele websites voor zelfstandigen en KMO's
@@ -26,6 +26,6 @@ info@webamo.be | +32 493 527 360 | https://webamo.be/contact
 - /cases — Portfolio met resultaten
 - /tarieven — Prijzen en pakketten (BASIS, Starter, Groei)
 - /contact — Gratis gesprek plannen
-- /webdesign-brugge — Website laten maken in Brugge
+- /webdesign-brugge — Website laten maken in Brugge en Oostkamp
 - /privacy — Privacybeleid
 - /cookies — Cookiebeleid

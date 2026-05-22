@@ -13,7 +13,8 @@ export const images = {
   brand: {
     logo: imageSrc("brand", "webamo-logo-light-transparent.png"),
     logoDark: imageSrc("brand", "webamo-logo-dark-transparent.png"),
-    og: "/icon.png",
+    favicon: imageSrc("brand", "w-avatar-black.png"),
+    og: imageSrc("brand", "webamo-og-dark.png"),
   },
   cases: {
     dakralux: imageSrc("cases", "Dakralux-demo.png"),
