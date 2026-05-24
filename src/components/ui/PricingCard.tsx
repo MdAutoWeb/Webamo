@@ -38,7 +38,13 @@ export default function PricingCard({ plan }: { plan: Plan }) {
         </div>
       )}
 
-      <ul className="space-y-[10px] flex-1 mb-7">
+      <ul
+        className={`space-y-[10px] flex-1 mb-7 ${
+          plan.id === "automation"
+            ? "max-h-[200px] overflow-y-auto pr-1 pricing-card-features-scroll"
+            : ""
+        }`}
+      >
         {plan.features.map((f) => (
           <li key={f} className="flex items-start gap-[9px]">
             <svg

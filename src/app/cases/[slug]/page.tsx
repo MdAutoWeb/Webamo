@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
 import { cases } from "@/lib/data";
+import { withSocialMetadata } from "@/lib/site-metadata";
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -17,16 +18,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = cases.find((x) => x.slug === slug);
   if (!c) return {};
-  return {
+  return withSocialMetadata({
     title: `Case: ${c.name}`,
     description: c.description,
     alternates: { canonical: `https://webamo.be/cases/${c.slug}` },
     openGraph: {
-      title: `${c.name} — Case | Webamo`,
+      title: `${c.name} | Case | Webamo`,
       description: c.description,
       url: `https://webamo.be/cases/${c.slug}`,
     },
-  };
+  });
 }
 
 export default async function CaseDetailPage({

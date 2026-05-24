@@ -19,8 +19,8 @@ const diensten: { tag: string; title: string; body: string; href: string }[] = [
   },
   {
     tag: "Automatisatie",
-    title: "Automatisatie",
-    body: "Van gemiste oproep tot automatische SMS, van offerte tot factuur: alles loopt automatisch. Jij hoeft alleen nog maar te werken.",
+    title: "Automatisatie & leadmachine",
+    body: "Leadmachine met Airtable, missed-call text-back, WhatsApp & chatbots, review automation en offerteflows, op maat en ook zonder nieuwe website.",
     href: "/diensten#automatisatie",
   },
   {

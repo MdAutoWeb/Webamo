@@ -1,32 +1,34 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { processLead } from "@/lib/lead-process";
 
 export const runtime = "nodejs";
 
 type LeadPayload = {
-  name: string;
-  email: string;
+  name?: string;
+  email?: string;
   company?: string;
   website?: string;
-  helpTypes?: string[]; // checkboxen
+  phone?: string;
+  helpTypes?: string[];
   situation?: string;
   preferredMoment?: string;
-
-  // simpele anti-spam (honeypot)
-  websiteTrap?: string; // hidden input
-
+  websiteTrap?: string;
   brand?: "webamo" | "dakralux";
+  /** Nederlands formaat (zelfde als /api/leads/process) */
+  naam?: string;
+  bedrijfsnaam?: string;
+  dienst?: string[];
+  situatie?: string;
+  voorkeurmoment?: string;
+  telefoon?: string;
 };
 
 type BrandKey = "webamo" | "dakralux";
 
 const BRAND_CONFIG: Record<
   BrandKey,
-  {
-    from: string;
-    replyTo: string;
-    signature: string;
-  }
+  { from: string; replyTo: string; signature: string }
 > = {
   webamo: {
     from: process.env.FROM_EMAIL ?? "Webamo <no-reply@webamo.be>",
@@ -44,122 +46,46 @@ export async function POST(req: Request) {
   try {
     const body = (await req.json()) as LeadPayload;
 
-    // Honeypot: als ingevuld => bot
-    if (body.websiteTrap && body.websiteTrap.trim() !== "") {
-      return NextResponse.json({ ok: true }); // stil "success" teruggeven
+    if (body.websiteTrap?.trim()) {
+      return NextResponse.json({ ok: true });
     }
 
-    const name = body.name?.trim();
+    const naam = (body.naam ?? body.name)?.trim();
     const email = body.email?.trim();
 
-    if (!name || !email) {
+    if (!naam || !email) {
       return NextResponse.json(
         { error: "Naam en e-mail zijn verplicht." },
         { status: 400 }
       );
     }
 
-    const fields = {
-      Naam: name,
-      "E-mail": email,
-      Bedrijfsnaam: body.company?.trim() || "",
-      Website: body.website?.trim() || "",
-      "Waarmee kan ik je helpen?": Array.isArray(body.helpTypes)
-        ? body.helpTypes
-        : [],
-      "Situatie / toelichting": body.situation?.trim() || "",
-      Voorkeurmoment: body.preferredMoment?.trim() || "",
-      Status: "Nieuw",
-    };
-
-    const baseId = process.env.AIRTABLE_BASE_ID;
-    const tableName = process.env.AIRTABLE_TABLE_NAME || "Leads";
-    const apiKey = process.env.AIRTABLE_API_KEY;
-
-    if (!baseId || !apiKey) {
-      return NextResponse.json(
-        { error: "Server configuratie mist Airtable env vars." },
-        { status: 500 }
-      );
-    }
-
-    const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
-
-    const airtableRes = await fetch(url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ fields, typecast: true }),
+    const result = await processLead({
+      naam,
+      email,
+      bedrijfsnaam: body.bedrijfsnaam ?? body.company,
+      website: body.website,
+      dienst: body.dienst ?? body.helpTypes,
+      situatie: body.situatie ?? body.situation,
+      voorkeurmoment: body.voorkeurmoment ?? body.preferredMoment,
+      telefoon: body.telefoon ?? body.phone,
     });
 
-    if (!airtableRes.ok) {
-      const err = await airtableRes.json().catch(async () => ({
-        raw: await airtableRes.text(),
-      }));
-
-      // Log de volledige error voor debugging
-      console.error("Airtable API Error:", {
-        status: airtableRes.status,
-        statusText: airtableRes.statusText,
-        error: err,
-        url,
-        fields,
-      });
-
-      return NextResponse.json(
-        {
-          error: "Airtable fout",
-          airtable: err,
-          status: airtableRes.status,
-          statusText: airtableRes.statusText,
-        },
-        { status: 500 }
-      );
-    }
-
-    // Airtable is OK – nu (best effort) bevestigingsmail sturen via Resend
     const brandKey: BrandKey =
       body.brand === "dakralux" ? "dakralux" : "webamo";
     const brand = BRAND_CONFIG[brandKey];
-
     const resendApiKey = process.env.RESEND_API_KEY;
 
-    if (!resendApiKey) {
-      console.error("RESEND_API_KEY ontbreekt – e-mail wordt niet verzonden.");
-    } else {
+    if (resendApiKey) {
       const resend = new Resend(resendApiKey);
-
-      const helpSummary =
-        Array.isArray(body.helpTypes) && body.helpTypes.length > 0
-          ? body.helpTypes.join(", ")
-          : "Geen specifieke selectie opgegeven.";
-
-      const companyLine = body.company?.trim()
-        ? `Bedrijf: ${body.company.trim()}\n`
-        : "";
-      const websiteLine = body.website?.trim()
-        ? `Website: ${body.website.trim()}\n`
-        : "";
-
       const textBody = [
-        `Dag ${name},`,
+        `Dag ${naam},`,
         "",
         "Bedankt voor je aanvraag. We hebben alles goed ontvangen.",
-        "We bekijken je bericht en reageren normaal binnen 1 werkdag met een voorstel voor de volgende stap.",
-        "",
-        "Samenvatting van wat je doorgaf:",
-        `- Hulpvraag: ${helpSummary}`,
-        companyLine ? `- ${companyLine.trimEnd()}` : "",
-        websiteLine ? `- ${websiteLine.trimEnd()}` : "",
-        "",
-        "Als je in de tussentijd nog extra info wil doorsturen of iets wil verduidelijken, kan je gewoon op deze e-mail antwoorden.",
+        "We bekijken je bericht en reageren normaal binnen 1 werkdag.",
         "",
         brand.signature,
-      ]
-        .filter(Boolean)
-        .join("\n");
+      ].join("\n");
 
       try {
         await resend.emails.send({
@@ -170,18 +96,27 @@ export async function POST(req: Request) {
           text: textBody,
         });
       } catch (mailErr) {
-        // Lead is wel opgeslagen in Airtable – mailfout mag de response niet blokkeren
-        console.error(
-          "Fout bij versturen bevestigingsmail via Resend:",
-          mailErr
-        );
+        console.error("Resend:", mailErr);
       }
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, recordId: result.recordId });
   } catch (err) {
+    const message = err instanceof Error ? err.message : "";
+
+    if (message === "AIRTABLE_NOT_CONFIGURED" || message === "AIRTABLE_CREATE_FAILED") {
+      return NextResponse.json(
+        {
+          error:
+            "Je bericht kon niet worden opgeslagen. Probeer opnieuw of mail naar info@webamo.be.",
+        },
+        { status: 500 }
+      );
+    }
+
+    console.error("Lead API:", err);
     return NextResponse.json(
-      { error: "Onverwachte serverfout." },
+      { error: "Onverwachte serverfout. Probeer later opnieuw." },
       { status: 500 }
     );
   }

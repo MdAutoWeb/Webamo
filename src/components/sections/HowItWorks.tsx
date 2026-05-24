@@ -23,17 +23,31 @@ export default function HowItWorks() {
     <section className="bg-[#0A0A0A]">
       <div className="max-w-[1120px] mx-auto px-5 py-16 md:py-24">
         <div className="text-center mb-12">
-          <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3">Hoe het werkt</div>
+          <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-white/30 mb-3">
+            Hoe het werkt
+          </div>
           <h2 className="font-bold text-[32px] md:text-[40px] tracking-[-0.025em] leading-[1.1] text-white">
-            Van gesprek tot leads<br />in 3 stappen
+            Van gesprek tot leads
+            <br />
+            in 3 stappen
           </h2>
         </div>
 
-        <MobileSwipeRow desktopCols="md:grid-cols-3" hintClassName="text-white/35">
+        <MobileSwipeRow
+          desktopCols="md:grid-cols-3"
+          hintClassName="text-white/35"
+        >
           {steps.map(({ num, title, body }) => (
-            <div key={num} className="border border-white/10 rounded-[16px] p-7 h-full">
-              <div className="font-bold text-[40px] tracking-[-0.04em] text-[#2563EB] mb-5 leading-none">{num}</div>
-              <h3 className="font-semibold text-[18px] text-white tracking-[-0.01em] mb-2">{title}</h3>
+            <div
+              key={num}
+              className="border border-white/10 rounded-[16px] p-7 h-full"
+            >
+              <div className="font-bold text-[40px] tracking-[-0.04em] text-[#2563EB] mb-5 leading-none">
+                {num}
+              </div>
+              <h3 className="font-semibold text-[18px] text-white tracking-[-0.01em] mb-2">
+                {title}
+              </h3>
               <p className="text-[14px] text-white/50 leading-[1.6]">{body}</p>
             </div>
           ))}

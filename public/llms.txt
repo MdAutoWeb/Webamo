@@ -21,11 +21,11 @@ Brugge, West-Vlaanderen, Vlaanderen, België
 info@webamo.be | +32 493 527 360 | https://webamo.be/contact
 
 ## Pagina's
-- / — Homepage: webdesign en automatisatie voor kleine bedrijven
-- /diensten — Websites, lokale SEO en automation
-- /cases — Portfolio met resultaten
-- /tarieven — Prijzen en pakketten (BASIS, Starter, Groei)
-- /contact — Gratis gesprek plannen
-- /webdesign-brugge — Website laten maken in Brugge en Oostkamp
-- /privacy — Privacybeleid
-- /cookies — Cookiebeleid
+- / : Homepage, webdesign en automatisatie voor kleine bedrijven
+- /diensten : Websites, lokale SEO en automation
+- /cases : Portfolio met resultaten
+- /tarieven : Prijzen en pakketten (BASIS, Starter, Groei)
+- /contact : Gratis gesprek plannen
+- /webdesign-brugge : Website laten maken in Brugge en Oostkamp
+- /privacy : Privacybeleid
+- /cookies : Cookiebeleid

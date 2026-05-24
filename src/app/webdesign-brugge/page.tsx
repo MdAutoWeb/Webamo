@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
+import { withSocialMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocialMetadata({
   title: "Website laten maken Brugge & Oostkamp",
   description:
     "Website laten maken in Brugge of Oostkamp? Webamo bouwt snelle, conversiegerichte websites voor zelfstandigen en KMO's in West-Vlaanderen. Vanaf €695, live in 1-2 weken.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Professionele websites voor bedrijven in Brugge. Op maat, mobiel-first en gericht op meer leads.",
     url: "https://webamo.be/webdesign-brugge",
   },
-};
+});
 
 const jsonLd = {
   "@context": "https://schema.org",

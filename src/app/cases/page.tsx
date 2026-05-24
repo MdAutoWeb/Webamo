@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import CaseCard from "@/components/ui/CaseCard";
 import CTASection from "@/components/sections/CTASection";
 import { cases } from "@/lib/data";
+import { withSocialMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocialMetadata({
   title: "Cases",
   description: "Bekijk hoe Webamo websites en automations bouwt die echt werken. Echte resultaten voor echte bedrijven in Brugge en Vlaanderen.",
   alternates: { canonical: "https://webamo.be/cases" },
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description: "Bekijk hoe Webamo websites en automations bouwt die echt werken. Echte resultaten voor echte bedrijven in Brugge en Vlaanderen.",
     url: "https://webamo.be/cases",
   },
-};
+});
 
 export default function CasesPage() {
   return (

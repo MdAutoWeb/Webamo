@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
+import { automationServices } from "@/lib/data";
+import { withSocialMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withSocialMetadata({
   title: "Diensten",
   description: "Website, webshop en automatisatie voor kleine bedrijven in Brugge en Vlaanderen. Alles op maat, snel geleverd.",
   alternates: { canonical: "https://webamo.be/diensten" },
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
     description: "Website, webshop en automatisatie voor kleine bedrijven in Brugge en Vlaanderen. Alles op maat, snel geleverd.",
     url: "https://webamo.be/diensten",
   },
-};
+});
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
@@ -19,7 +21,14 @@ const serviceJsonLd = {
   name: "Webdesign & Automatisatie",
   provider: { "@id": "https://webamo.be/#organization" },
   areaServed: { "@type": "AdministrativeArea", name: "Vlaanderen" },
-  serviceType: ["Webdesign", "Webshop ontwikkeling", "Marketing automatisatie", "Lokale SEO"],
+  serviceType: [
+    "Webdesign",
+    "Webshop ontwikkeling",
+    "Marketing automatisatie",
+    "Lead automatisatie",
+    "Chatbots",
+    "Lokale SEO",
+  ],
   url: "https://webamo.be/diensten",
 };
 
@@ -40,21 +49,15 @@ const diensten = [
   {
     id: "automatisatie",
     tag: "Automatisatie",
-    title: "Leads automatisch opvolgen zonder extra werk",
-    body: "Elk formulier dat ingevuld wordt, komt automatisch in Airtable terecht. De klant krijgt meteen een bevestigingsmail. Jij ziet de lead en belt. Geen enkel contact gaat verloren.",
-    bullets: [
-      "Airtable CRM integratie",
-      "Automatische bevestigingsmail naar klant",
-      "Missed-call text-back (optioneel)",
-      "WhatsApp automatisatie (optioneel)",
-      "Offerte flows op maat",
-    ],
+    title: automationServices.title,
+    body: automationServices.body,
+    bullets: automationServices.bullets,
   },
   {
     id: "webshop",
     tag: "Webshop",
     title: "Online verkopen zonder gedoe",
-    body: "Betaling, beheer en bestellingen volledig geregeld. We bouwen een snelle webshop op maat — zonder abonnementskosten van derde platformen.",
+    body: "Betaling, beheer en bestellingen volledig geregeld. We bouwen een snelle webshop op maat, zonder abonnementskosten van derde platformen.",
     bullets: [
       "Mollie of Stripe betaling",
       "Admin panel voor producten",
@@ -78,7 +81,7 @@ export default function DienstenPage() {
           Alles wat je nodig hebt<br />om online te groeien
         </h1>
         <p className="text-[16px] text-[#6B7280] leading-[1.65] max-w-[520px]">
-          Van website tot webshop tot automatisatie — gefocust op één doel: meer klanten voor jouw bedrijf.
+          Van website tot webshop tot automatisatie, met één doel: meer klanten voor jouw bedrijf.
         </p>
       </section>
 

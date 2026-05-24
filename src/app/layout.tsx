@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { images } from "@/lib/images";
 import { cases } from "@/lib/data";
+import { defaultOgImages, defaultTwitter } from "@/lib/site-metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,15 +25,13 @@ export const metadata: Metadata = {
     siteName: "Webamo",
     locale: "nl_BE",
     type: "website",
-    images: [{ url: images.brand.og, width: 1200, height: 630, alt: "Webamo" }],
+    images: defaultOgImages,
   },
+  twitter: defaultTwitter,
   alternates: { canonical: "https://webamo.be" },
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: [
-      { url: images.brand.favicon, sizes: "32x32", type: "image/png" },
-      { url: images.brand.favicon, sizes: "192x192", type: "image/png" },
-    ],
+    icon: [{ url: images.brand.favicon, sizes: "32x32", type: "image/png" }],
     apple: [{ url: images.brand.favicon, sizes: "180x180", type: "image/png" }],
   },
 };

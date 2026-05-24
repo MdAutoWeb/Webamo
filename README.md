@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment variables
+
+Maak lokaal `.env.local` aan (nooit committen). Vercel: Project → Settings → Environment Variables.
+
+```
+AIRTABLE_API_KEY=
+AIRTABLE_BASE_ID=
+AIRTABLE_TABLE_ID=          # of AIRTABLE_TABLE_NAME=Leads
+GROQ_API_KEY=
+RESEND_API_KEY=
+FROM_EMAIL=
+```
+
 ## Getting Started
 
 First, run the development server:

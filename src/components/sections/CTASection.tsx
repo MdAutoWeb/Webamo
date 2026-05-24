@@ -25,7 +25,7 @@ export default function CTASection() {
               Gratis gesprek plannen
             </Button>
           </motion.div>
-          <Button href="/contact" variant="outline-dark" size="lg">
+          <Button href="/tarieven" variant="outline-dark" size="lg">
             Bekijk tarieven
           </Button>
         </div>

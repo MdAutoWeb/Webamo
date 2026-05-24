@@ -63,8 +63,8 @@ export const cases: SiteCase[] = [
   {
     slug: "kh-reflexologie",
     name: "KH-Reflexologie",
-    url: "kh-reflexologie.be",
-    href: "https://kh-reflexologie.be",
+    url: "kh-reflexologie.vercel.app",
+    href: "https://kh-reflexologie.vercel.app",
     image: images.cases.khReflexologie,
     tags: ["Website", "Design", "Conversie"],
     quote: "Volledig op maat gebouwd.",
@@ -110,7 +110,7 @@ export const plans: Plan[] = [
     id: "starter",
     name: "Starter",
     price: "€850",
-    monthly: "+ €45/m",
+    monthly: "+ €57/m",
     sub: "onderhoud",
     badge: "Populair",
     features: [
@@ -158,12 +158,40 @@ export const plans: Plan[] = [
     id: "automation",
     name: "Automation",
     price: "€300+",
-    sub: "setup, eenmalig",
-    features: ["Geen website nodig", "Missed-call text-back", "WhatsApp automation", "Offerte flows"],
+    sub: "setup op maat, eenmalig",
+    features: [
+      "Werkt met je bestaande website, geen nieuwe site nodig",
+      "Leadmachine: scoring, prioriteit & Airtable CRM",
+      "Automatische bevestiging & opvolging van leads",
+      "Missed-call text-back (gemiste oproep → direct SMS)",
+      "WhatsApp automatisatie & chatbots op maat",
+      "Review automation (meer Google-reviews, automatisch)",
+      "Offerte-, intake- en afspraakflows",
+      "E-mailflows & herinneringen (Resend / Make / Zapier)",
+      "Koppelingen met tools die jij al gebruikt",
+    ],
     cta: "Vraag demo",
     ctaHref: "/contact",
   },
 ];
+
+/** Uitgebreide automatisatie-diensten (dienstenpagina, SEO) */
+export const automationServices = {
+  title: "Automatisatie & AI voor je bedrijf",
+  body: "Je hoeft geen nieuwe website te laten maken om te profiteren van automatisatie. We koppelen slimme flows aan je bestaande site, telefoon en mailbox, zodat leads niet verloren gaan, klanten sneller antwoord krijgen en jij minder administratie doet.",
+  bullets: [
+    "Leadmachine: elk formulier → Airtable, met score, prioriteit en AI-samenvatting",
+    "Automatische bevestigingsmail en opvolg-reminders",
+    "Missed-call text-back: gemiste oproep → direct een professionele SMS",
+    "WhatsApp automatisatie: intake, FAQ en doorverwijzing zonder handmatig getik",
+    "Chatbots op je website (lead kwalificeren, afspraak voorstellen)",
+    "Review automation: tevreden klanten automatisch vragen om een Google-review",
+    "Offerte- en intakeflows (formulier → PDF/offerte → opvolging)",
+    "E-mailsequences: nurture, herinneringen, na-offerte opvolging",
+    "Koppelingen: Airtable, Make, Zapier, Google Calendar, Mollie, …",
+    "Maatwerk: we bouwen wat jouw proces nodig heeft, geen standaardpakket",
+  ],
+};
 
 export const faqGeneral: FaqItem[] = [
   { q: "Hoe lang duurt het om een site te bouwen?", a: "Gemiddeld 1 tot 2 weken. Sneller dan agencies, zonder kwaliteitsverlies." },
@@ -177,6 +205,10 @@ export const faqGeneral: FaqItem[] = [
 ];
 
 export const faqPricing: FaqItem[] = [
+  {
+    q: "Wat kan ik laten automatiseren?",
+    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, vanaf €300 setup.",
+  },
   { q: "Wat zit er in de €45/m?", a: "Hosting, domein, SSL, technische updates en max 1u aanpassingen/maand." },
   { q: "Kan ik stoppen wanneer ik wil?", a: "Na een minimumperiode van 12 maanden kan je maandelijks opzeggen met 1 maand opzegtermijn." },
   { q: "Betaal ik de setup eenmalig?", a: "Ja, de setup betaal je éénmalig. Het maandelijks bedrag is voor hosting, domein en onderhoud." },
