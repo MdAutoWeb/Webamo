@@ -30,6 +30,9 @@ export type Plan = {
   cta: string;
   ctaHref: string;
   featured?: boolean;
+  /** Tekst naast maandprijs (bv. optioneel onderhoud bij Automation) */
+  monthlySub?: string;
+  footnote?: string;
 };
 
 export type FaqItem = { q: string; a: string };
@@ -109,8 +112,8 @@ export const plans: Plan[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "€850",
-    monthly: "+ €57/m",
+    price: "€895",
+    monthly: "+ €67/m",
     sub: "onderhoud",
     badge: "Populair",
     features: [
@@ -127,7 +130,7 @@ export const plans: Plan[] = [
   {
     id: "groei",
     name: "Groei",
-    price: "€1.850",
+    price: "€1.295",
     monthly: "+ €95/m",
     sub: "onderhoud",
     features: [
@@ -157,8 +160,10 @@ export const plans: Plan[] = [
   {
     id: "automation",
     name: "Automation",
-    price: "€300+",
+    price: "vanaf €495",
     sub: "setup op maat, eenmalig",
+    monthly: "Optioneel: + €45/m",
+    monthlySub: "Onderhoud & monitoring van je automations",
     features: [
       "Werkt met je bestaande website, geen nieuwe site nodig",
       "Leadmachine: scoring, prioriteit & Airtable CRM",
@@ -170,8 +175,9 @@ export const plans: Plan[] = [
       "E-mailflows & herinneringen (Resend / Make / Zapier)",
       "Koppelingen met tools die jij al gebruikt",
     ],
-    cta: "Vraag demo",
+    cta: "Bespreek je flow",
     ctaHref: "/contact",
+    footnote: "Zonder onderhoudscontract: fixes op regie aan €75/u",
   },
 ];
 
@@ -207,7 +213,7 @@ export const faqGeneral: FaqItem[] = [
 export const faqPricing: FaqItem[] = [
   {
     q: "Wat kan ik laten automatiseren?",
-    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, vanaf €300 setup.",
+    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, vanaf €495 setup.",
   },
   { q: "Wat zit er in de €45/m?", a: "Hosting, domein, SSL, technische updates en max 1u aanpassingen/maand." },
   { q: "Kan ik stoppen wanneer ik wil?", a: "Na een minimumperiode van 12 maanden kan je maandelijks opzeggen met 1 maand opzegtermijn." },

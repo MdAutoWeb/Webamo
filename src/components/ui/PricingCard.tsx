@@ -28,7 +28,16 @@ export default function PricingCard({ plan }: { plan: Plan }) {
         </span>
       </div>
 
-      {plan.monthly ? (
+      {plan.monthlySub ? (
+        <div
+          className={`text-[11px] leading-[1.45] mb-6 space-y-1 ${featured ? "text-white/45" : "text-[#9CA3AF]"}`}
+        >
+          <div>{plan.sub}</div>
+          <div>
+            {plan.monthly} {plan.monthlySub}
+          </div>
+        </div>
+      ) : plan.monthly ? (
         <div className={`text-[13px] mb-6 ${featured ? "text-white/50" : "text-[#9CA3AF]"}`}>
           {plan.monthly} {plan.sub}
         </div>
@@ -72,9 +81,15 @@ export default function PricingCard({ plan }: { plan: Plan }) {
         {plan.cta}
       </Button>
 
-      {plan.monthly && (
+      {plan.monthly && plan.id !== "automation" && (
         <p className={`mt-4 text-[11px] leading-[1.5] ${featured ? "text-white/30" : "text-[#9CA3AF]"}`}>
           Minimumperiode: 12 maanden.<br />Daarna maandelijks opzegbaar met 1 maand opzegtermijn.
+        </p>
+      )}
+
+      {plan.footnote && (
+        <p className={`mt-4 text-[11px] leading-[1.5] ${featured ? "text-white/30" : "text-[#9CA3AF]"}`}>
+          {plan.footnote}
         </p>
       )}
     </div>
