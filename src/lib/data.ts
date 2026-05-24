@@ -160,7 +160,7 @@ export const plans: Plan[] = [
   {
     id: "automation",
     name: "Automation",
-    price: "vanaf €495",
+    price: "€495+",
     sub: "setup op maat, eenmalig",
     monthly: "Optioneel: + €45/m",
     monthlySub: "Onderhoud & monitoring van je automations",
@@ -213,7 +213,7 @@ export const faqGeneral: FaqItem[] = [
 export const faqPricing: FaqItem[] = [
   {
     q: "Wat kan ik laten automatiseren?",
-    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, vanaf €495 setup.",
+    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, setup vanaf €495+.",
   },
   { q: "Wat zit er in de €45/m?", a: "Hosting, domein, SSL, technische updates en max 1u aanpassingen/maand." },
   { q: "Kan ik stoppen wanneer ik wil?", a: "Na een minimumperiode van 12 maanden kan je maandelijks opzeggen met 1 maand opzegtermijn." },
