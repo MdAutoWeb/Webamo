@@ -1,10 +1,18 @@
 import type { MetadataRoute } from "next";
 import { cases } from "@/lib/data";
+import { seoPages } from "@/lib/seo-landing-pages";
 
 const base = "https://webamo.be";
-const LAST_UPDATED = "2026-05-22";
+const LAST_UPDATED = "2026-05-29";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const seo_routes = Object.values(seoPages).map((page) => ({
+    url: `${base}${page.path}`,
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+    lastModified: LAST_UPDATED,
+  }));
+
   const static_routes = [
     { url: base, priority: 1.0, changeFrequency: "weekly" as const },
     { url: `${base}/diensten`, priority: 0.9, changeFrequency: "monthly" as const },
@@ -23,5 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...static_routes, ...case_routes];
+  return [...static_routes, ...seo_routes, ...case_routes];
 }

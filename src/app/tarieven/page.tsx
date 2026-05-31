@@ -18,12 +18,12 @@ const faqJsonLd = {
 export const metadata: Metadata = withSocialMetadata({
   title: "Tarieven",
   description:
-    "Transparante prijzen voor websites, webshops en automatisaties. Geen verborgen kosten. BASIS vanaf €695, alles all-in.",
+    "Transparante prijzen voor websites, webshops en automatisaties. Website vanaf €695 setup + onderhoud, automatisatie vanaf €495+.",
   alternates: { canonical: "https://webamo.be/tarieven" },
   openGraph: {
     title: "Tarieven | Webamo",
     description:
-      "Transparante prijzen voor websites, webshops en automatisaties. Geen verborgen kosten. BASIS vanaf €695, alles all-in.",
+      "Transparante prijzen voor websites, webshops en automatisaties. Website vanaf €695 setup + onderhoud, automatisatie vanaf €495+.",
     url: "https://webamo.be/tarieven",
   },
 });

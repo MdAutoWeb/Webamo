@@ -26,7 +26,7 @@ const serviceJsonLd = {
     "Webshop ontwikkeling",
     "Marketing automatisatie",
     "Lead automatisatie",
-    "Chatbots",
+    "Chatflows",
     "Lokale SEO",
   ],
   url: "https://webamo.be/diensten",

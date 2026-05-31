@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
+import FAQSection from "@/components/sections/FAQSection";
+import { cityFaq } from "@/lib/seo-landing-pages";
 import { withSocialMetadata } from "@/lib/site-metadata";
+
+const faq = cityFaq("Brugge");
 
 export const metadata: Metadata = withSocialMetadata({
   title: "Website laten maken Brugge & Oostkamp",
@@ -17,7 +21,7 @@ export const metadata: Metadata = withSocialMetadata({
   },
 });
 
-const jsonLd = {
+const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Webdesign Brugge",
@@ -26,12 +30,26 @@ const jsonLd = {
   url: "https://webamo.be/webdesign-brugge",
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function WebdesignBruggePage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <section className="max-w-[1120px] mx-auto px-5 pt-16 pb-12 md:pt-24">
         <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#2563EB] mb-4">
@@ -103,6 +121,7 @@ export default function WebdesignBruggePage() {
         </div>
       </section>
 
+      <FAQSection items={faq} />
       <CTASection />
     </>
   );

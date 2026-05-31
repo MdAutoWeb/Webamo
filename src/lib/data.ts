@@ -37,6 +37,31 @@ export type Plan = {
 
 export type FaqItem = { q: string; a: string };
 
+/** Gedeeld op stadspagina's en webdesign-brugge */
+export const faqMoetIkTekstenSchrijven: FaqItem = {
+  q: "Moet ik zelf teksten schrijven?",
+  a: "Nee, dat hoeft niet. In een kort gesprek vertel je wat je doet, voor wie je werkt en waar je actief bent. Wij schrijven de teksten en zetten ze helder op je site. Jij levert vooral foto's van realisaties. Wij zorgen dat alles overtuigend en makkelijk leesbaar is.",
+};
+
+export function faqWatKostWebsiteInCity(city: string): FaqItem {
+  return {
+    q: `Wat kost website laten maken in ${city}?`,
+    a: `Een website start vanaf €695 eenmalig (setup) plus een vast maandelijks bedrag voor hosting, domein en onderhoud, bij BASIS is dat €45/m. Dat maandbedrag hoort bij het pakket; het is geen extra optie. Automatisatie los van een nieuwe site start vanaf €495+ setup. De exacte prijs hangt af van je wensen. Zie onze tarievenpagina of plan een gratis gesprek voor een voorstel op maat.`,
+  };
+}
+
+/** Automatisatie-pagina's (footer Automatisatie), geen nieuwe site verplicht */
+export const faqWatKostAutomatisatie: FaqItem = {
+  q: "Wat kost het?",
+  a: "Automatisatie start vanaf €495+ eenmalig (setup op maat). Je hebt geen nieuwe website nodig: we koppelen aan je bestaande site, formulier, mailbox of telefoon. Optioneel onderhoud en monitoring: + €45/m. De prijs hangt af van je flows, zie het Automation-pakket op onze tarievenpagina of plan een gratis gesprek.",
+};
+
+/** Website-pagina's waar een nieuwe site het hoofdproduct is */
+export const faqWatKostWebsite: FaqItem = {
+  q: "Wat kost het?",
+  a: "Een website start vanaf €695 setup plus een vast maandbedrag voor hosting en onderhoud (vanaf €45/m bij BASIS). Op de tarievenpagina zie je BASIS, STARTER en GROEI; in een gratis gesprek krijg je een voorstel op maat.",
+};
+
 export const cases: SiteCase[] = [
   {
     slug: "dakralux",
@@ -46,7 +71,8 @@ export const cases: SiteCase[] = [
     image: images.cases.dakralux,
     tags: ["Website", "CRM", "Lead Management"],
     quote: "Van 0 naar online gevonden in 6 maanden.",
-    description: "Dakralux is een dakdekkersbedrijf uit West-Vlaanderen zonder sterke online aanwezigheid. Ze verloren dagelijks leads aan concurrenten.",
+    description:
+      "Dakralux is een dakdekkersbedrijf uit West-Vlaanderen zonder sterke online aanwezigheid. Ze verloren dagelijks leads aan concurrenten.",
     results: [
       "Van 0 naar online gevonden in 6 maanden",
       "Automatische opvolging van elke lead via Airtable",
@@ -58,7 +84,8 @@ export const cases: SiteCase[] = [
       "Automatische bevestigingsmail naar klant",
       "Mobiel-first design met snelle laadtijden",
     ],
-    testimonialText: "Ik ben enorm tevreden over mijn nieuwe website. Alles werd heel professioneel gemaakt en volledig naar mijn wensen.",
+    testimonialText:
+      "Ik ben enorm tevreden over mijn nieuwe website. Alles werd heel professioneel gemaakt en volledig naar mijn wensen.",
     testimonialAuthor: "Robby Seynaeve",
     testimonialRole: "Dakralux",
     variant: "dark",
@@ -71,7 +98,8 @@ export const cases: SiteCase[] = [
     image: images.cases.khReflexologie,
     tags: ["Website", "Design", "Conversie"],
     quote: "Volledig op maat gebouwd.",
-    description: "KH-Reflexologie is een reflexologiepraktijk in de regio Brugge. De verouderde website sloot niet aan bij de warme sfeer van de praktijk.",
+    description:
+      "KH-Reflexologie is een reflexologiepraktijk in de regio Brugge. De verouderde website sloot niet aan bij de warme sfeer van de praktijk.",
     results: [
       "Professionele uitstraling die past bij de praktijk",
       "Nieuwe online boekingsaanvragen via het contactformulier",
@@ -84,7 +112,8 @@ export const cases: SiteCase[] = [
       "Contactformulier voor afspraken",
       "Mobile-first approach",
     ],
-    testimonialText: "Een prachtige website die perfect aansluit bij mijn praktijk. Klanten vinden me nu gemakkelijk online.",
+    testimonialText:
+      "Een prachtige website die perfect aansluit bij mijn praktijk. Klanten vinden me nu gemakkelijk online.",
     testimonialAuthor: "Kimberley",
     testimonialRole: "KH-Reflexologie",
     variant: "warm",
@@ -169,7 +198,7 @@ export const plans: Plan[] = [
       "Leadmachine: scoring, prioriteit & Airtable CRM",
       "Automatische bevestiging & opvolging van leads",
       "Missed-call text-back (gemiste oproep → direct SMS)",
-      "WhatsApp automatisatie & chatbots op maat",
+      "WhatsApp-automatisatie en chatflows op maat",
       "Review automation (meer Google-reviews, automatisch)",
       "Offerte-, intake- en afspraakflows",
       "E-mailflows & herinneringen (Resend / Make / Zapier)",
@@ -183,14 +212,14 @@ export const plans: Plan[] = [
 
 /** Uitgebreide automatisatie-diensten (dienstenpagina, SEO) */
 export const automationServices = {
-  title: "Automatisatie & AI voor je bedrijf",
+  title: "Automatisatie voor je bedrijf",
   body: "Je hoeft geen nieuwe website te laten maken om te profiteren van automatisatie. We koppelen slimme flows aan je bestaande site, telefoon en mailbox, zodat leads niet verloren gaan, klanten sneller antwoord krijgen en jij minder administratie doet.",
   bullets: [
-    "Leadmachine: elk formulier → Airtable, met score, prioriteit en AI-samenvatting",
+    "Leadmachine: elk formulier → Airtable, met score, prioriteit en korte samenvatting",
     "Automatische bevestigingsmail en opvolg-reminders",
     "Missed-call text-back: gemiste oproep → direct een professionele SMS",
     "WhatsApp automatisatie: intake, FAQ en doorverwijzing zonder handmatig getik",
-    "Chatbots op je website (lead kwalificeren, afspraak voorstellen)",
+    "Chatflows op je website (lead kwalificeren, afspraak voorstellen)",
     "Review automation: tevreden klanten automatisch vragen om een Google-review",
     "Offerte- en intakeflows (formulier → PDF/offerte → opvolging)",
     "E-mailsequences: nurture, herinneringen, na-offerte opvolging",
@@ -200,24 +229,45 @@ export const automationServices = {
 };
 
 export const faqGeneral: FaqItem[] = [
-  { q: "Hoe lang duurt het om een site te bouwen?", a: "Gemiddeld 1 tot 2 weken. Sneller dan agencies, zonder kwaliteitsverlies." },
-  { q: "Zit domein en hosting inbegrepen?", a: "Ja, alles all-in. €45/m dekt domein, hosting, SSL, backups en onderhoud. Geen verborgen kosten, nooit." },
-  { q: "Kan ik later upgraden?", a: "Altijd. Begin met BASIS, schaal naar STARTER of GROEI wanneer je klaar bent. Je betaalt enkel het verschil." },
+  {
+    q: "Hoe lang duurt het om een site te bouwen?",
+    a: "Gemiddeld 1 tot 2 weken. Sneller dan agencies, zonder kwaliteitsverlies.",
+  },
+  {
+    q: "Zit domein en hosting inbegrepen?",
+    a: "Ja, alles all-in. €45/m dekt domein, hosting, SSL, backups en onderhoud. Geen verborgen kosten, nooit.",
+  },
+  {
+    q: "Kan ik later upgraden?",
+    a: "Altijd. Begin met BASIS, schaal naar STARTER of GROEI wanneer je klaar bent. Je betaalt enkel het verschil.",
+  },
   {
     q: "Werk je alleen in Brugge?",
     a: "Nee, heel Vlaanderen. We werken het meest in Brugge, Oostkamp en West-Vlaanderen, maar ook daarbuiten.",
   },
-  { q: "Wat als ik al een website heb?", a: "Dan kijken we eerst wat ontbreekt. Soms is enkel automatisatie genoeg om dezelfde site veel meer te laten opbrengen." },
+  {
+    q: "Wat als ik al een website heb?",
+    a: "Dan kijken we eerst wat ontbreekt. Soms is enkel automatisatie genoeg om dezelfde site veel meer te laten opbrengen.",
+  },
 ];
 
 export const faqPricing: FaqItem[] = [
   {
     q: "Wat kan ik laten automatiseren?",
-    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp & chatbots, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, setup vanaf €495+.",
+    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp-automatisatie, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, setup vanaf €495+.",
   },
-  { q: "Wat zit er in de €45/m?", a: "Hosting, domein, SSL, technische updates en max 1u aanpassingen/maand." },
-  { q: "Kan ik stoppen wanneer ik wil?", a: "Na een minimumperiode van 12 maanden kan je maandelijks opzeggen met 1 maand opzegtermijn." },
-  { q: "Betaal ik de setup eenmalig?", a: "Ja, de setup betaal je éénmalig. Het maandelijks bedrag is voor hosting, domein en onderhoud." },
+  {
+    q: "Wat zit er in de €45/m?",
+    a: "Hosting, domein, SSL, technische updates en max 1u aanpassingen/maand.",
+  },
+  {
+    q: "Kan ik stoppen wanneer ik wil?",
+    a: "Na een minimumperiode van 12 maanden kan je maandelijks opzeggen met 1 maand opzegtermijn.",
+  },
+  {
+    q: "Betaal ik de setup eenmalig?",
+    a: "Ja, de setup (€695 voor BASIS, €895 voor STARTER, enz.) betaal je éénmalig. Daarnaast betaal je een vast maandbedrag voor hosting, domein en onderhoud, dat hoort bij elk websitepakket. Automatisatie los van een nieuwe site start vanaf €495+ setup.",
+  },
   { q: "Is BTW inbegrepen?", a: "Alle prijzen zijn excl. 21% BTW." },
   ...faqGeneral,
 ];

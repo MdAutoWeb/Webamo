@@ -20,7 +20,7 @@ const diensten: { tag: string; title: string; body: string; href: string }[] = [
   {
     tag: "Automatisatie",
     title: "Automatisatie & leadmachine",
-    body: "Leadmachine met Airtable, missed-call text-back, WhatsApp & chatbots, review automation en offerteflows, op maat en ook zonder nieuwe website.",
+    body: "Leadmachine met Airtable, missed-call text-back, WhatsApp-automatisatie, review automation en offerteflows, op maat en ook zonder nieuwe website.",
     href: "/diensten#automatisatie",
   },
   {

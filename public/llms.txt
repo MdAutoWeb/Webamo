@@ -27,5 +27,14 @@ info@webamo.be | +32 493 527 360 | https://webamo.be/contact
 - /tarieven : Prijzen en pakketten (BASIS, Starter, Groei)
 - /contact : Gratis gesprek plannen
 - /webdesign-brugge : Website laten maken in Brugge en Oostkamp
+- /website-laten-maken-oostkamp : Website laten maken in Oostkamp
+- /website-laten-maken-zedelgem : Website laten maken in Zedelgem
+- /website-laten-maken-torhout : Website laten maken in Torhout
+- /website-laten-maken-wingene : Website laten maken in Wingene
+- /meer-offertes-met-website : Meer offertes via een conversiegerichte website
+- /website-met-automatische-opvolging : Website met automatische leadopvolging
+- /google-reviews-automatiseren : Google reviews automatiseren voor vakmannen
+- /minder-administratie : Minder administratie via automatisatie
+- /website-voor-vakmannen : Website voor schrijnwerkers, schilders en dakwerkers
 - /privacy : Privacybeleid
 - /cookies : Cookiebeleid
