@@ -33,6 +33,10 @@ export type Plan = {
   /** Tekst naast maandprijs (bv. optioneel onderhoud bij Automation) */
   monthlySub?: string;
   footnote?: string;
+  /** Maandbedrag (€) voor terugkerend onderhoud. Jaarlijks = 11x (1 maand gratis). */
+  monthlyAmount?: number;
+  /** Maandbedrag is optioneel (bv. Automation) i.p.v. verplicht onderdeel van het pakket. */
+  monthlyOptional?: boolean;
 };
 
 export type FaqItem = { q: string; a: string };
@@ -63,6 +67,35 @@ export const faqWatKostWebsite: FaqItem = {
 };
 
 export const cases: SiteCase[] = [
+  {
+    slug: "rb-schilderwerken",
+    name: "RB Schilderwerken",
+    url: "rbschilderwerken.be",
+    href: "https://www.rbschilderwerken.be",
+    image: images.cases.rbSchilderwerken,
+    tags: ["Website", "Design", "Lokale SEO"],
+    quote: "Een frisse start, meteen professioneel online.",
+    description:
+      "RB Schilderwerken is een schildersbedrijf uit Torhout dat in 2025 startte. Zonder online aanwezigheid moest de zaak meteen vertrouwen wekken en vindbaar zijn bij particulieren en aannemers in West-Vlaanderen.",
+    results: [
+      "Professionele uitstraling vanaf de eerste dag",
+      "Vindbaar op 'schilder Torhout' en omstreken",
+      "Offerteaanvragen via WhatsApp en e-mail",
+      "Realisaties met voor- en na-beelden in de kijker",
+    ],
+    whatWeBuilt: [
+      "Conversiegerichte website op maat",
+      "Realisaties met voor-na beelden",
+      "Lokale SEO voor Torhout en West-Vlaanderen",
+      "Offerteflow via formulier en WhatsApp",
+      "Mobiel-first design met snelle laadtijden",
+    ],
+    testimonialText:
+      "Webamo zette mijn vakmanschap meteen professioneel online. De site oogt strak en klanten vinden me nu makkelijk terug.",
+    testimonialAuthor: "Rufino",
+    testimonialRole: "RB Schilderwerken",
+    variant: "dark",
+  },
   {
     slug: "dakralux",
     name: "Dakralux",
@@ -126,6 +159,7 @@ export const plans: Plan[] = [
     name: "Basis",
     price: "€695",
     monthly: "+ €45/m",
+    monthlyAmount: 45,
     sub: "onderhoud",
     features: [
       "Professionele website",
@@ -143,6 +177,7 @@ export const plans: Plan[] = [
     name: "Starter",
     price: "€895",
     monthly: "+ €67/m",
+    monthlyAmount: 67,
     sub: "onderhoud",
     badge: "Populair",
     features: [
@@ -161,6 +196,7 @@ export const plans: Plan[] = [
     name: "Groei",
     price: "€1.295",
     monthly: "+ €95/m",
+    monthlyAmount: 95,
     sub: "onderhoud",
     features: [
       "Alles van STARTER",
@@ -175,6 +211,7 @@ export const plans: Plan[] = [
     name: "Webshop",
     price: "€1.500",
     monthly: "+ €65/m",
+    monthlyAmount: 65,
     sub: "onderhoud",
     features: [
       "Tot 50 producten",
@@ -192,6 +229,8 @@ export const plans: Plan[] = [
     price: "€495+",
     sub: "setup op maat, eenmalig",
     monthly: "Optioneel: + €45/m",
+    monthlyAmount: 45,
+    monthlyOptional: true,
     monthlySub: "Onderhoud & monitoring van je automations",
     features: [
       "Werkt met je bestaande website, geen nieuwe site nodig",

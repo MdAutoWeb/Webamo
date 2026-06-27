@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CaseCard from "@/components/ui/CaseCard";
-import MobileSwipeRow from "@/components/ui/MobileSwipeRow";
 import { cases } from "@/lib/data";
 
 export default function CasesSection() {
@@ -24,11 +23,23 @@ export default function CasesSection() {
         </Link>
       </div>
 
-      <MobileSwipeRow desktopCols="md:grid-cols-2" itemWidth="w-[min(92vw,340px)]">
+      <div
+        className="mobile-swipe flex gap-5 overflow-x-auto snap-x snap-mandatory pb-3 -mx-5 px-5"
+        role="list"
+      >
         {cases.map((c) => (
-          <CaseCard key={c.slug} c={c} />
+          <div
+            key={c.slug}
+            role="listitem"
+            className="snap-start shrink-0 w-[min(85vw,380px)]"
+          >
+            <CaseCard c={c} />
+          </div>
         ))}
-      </MobileSwipeRow>
+      </div>
+      <p className="text-center text-[11px] mt-4 tracking-wide text-[#9CA3AF]">
+        ← swipe om meer te zien →
+      </p>
     </section>
   );
 }

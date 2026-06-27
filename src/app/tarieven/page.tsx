@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { withSocialMetadata } from "@/lib/site-metadata";
-import PricingCard from "@/components/ui/PricingCard";
+import PricingGrid from "@/components/ui/PricingGrid";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import { plans, faqPricing } from "@/lib/data";
@@ -45,19 +45,16 @@ export default function TarievenPage() {
           <br />
           Geen verrassingen.
         </h1>
-        <p className="text-[16px] text-[#6B7280] leading-[1.65] max-w-[500px] mx-auto">
-          Éénmalige setup, maandelijks onderhoud. Alles inbegrepen: domein,
-          hosting, SSL, updates.
+        <p className="text-[16px] text-[#6B7280] leading-[1.65] max-w-[520px] mx-auto">
+          Éénmalige setup plus onderhoud. Kies maandelijks of jaarlijks, bij
+          jaarlijks betaal je 11 maanden en krijg je 1 maand gratis. Alles
+          inbegrepen: domein, hosting, SSL, updates.
         </p>
       </section>
 
       {/* Pricing grid */}
       <section className="max-w-[1120px] mx-auto px-5 pb-16 md:pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
-          {plans.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
-          ))}
-        </div>
+        <PricingGrid plans={plans} />
       </section>
 
       {/* Wat is inbegrepen in het maandelijks bedrag */}

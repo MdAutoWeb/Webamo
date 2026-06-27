@@ -13,11 +13,11 @@ export default function CaseCard({
 
   return (
     <div
-      className={`group rounded-[20px] overflow-hidden border transition-shadow hover:shadow-[0_20px_48px_-12px_rgba(10,10,10,.18)] ${
+      className={`group flex h-full flex-col rounded-[20px] overflow-hidden border transition-shadow hover:shadow-[0_20px_48px_-12px_rgba(10,10,10,.18)] ${
         dark ? "bg-[#0A0A0A] border-white/10" : "bg-[#FAF7F4] border-[#E5E7EB]"
       } ${featured ? "md:col-span-2" : ""}`}
     >
-      <Link href={`/cases/${c.slug}`} tabIndex={-1} aria-hidden>
+      <Link href={`/cases/${c.slug}`} tabIndex={-1} aria-hidden className="shrink-0">
         <div
           className={`w-full h-[200px] ${dark ? "bg-[#1a1a1a]" : "bg-[#EDE9E3]"} relative overflow-hidden`}
         >
@@ -25,7 +25,7 @@ export default function CaseCard({
             src={c.image}
             alt={`Screenshot ${c.name}`}
             fill
-            className="object-cover object-top"
+            className="object-cover object-left-top"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -47,7 +47,7 @@ export default function CaseCard({
       </Link>
 
       {/* Content */}
-      <div className="px-6 py-5">
+      <div className="flex flex-1 flex-col px-6 py-5">
         <a
           href={c.href}
           target="_blank"
@@ -95,7 +95,7 @@ export default function CaseCard({
 
         <Link
           href={`/cases/${c.slug}`}
-          className="mt-5 inline-flex items-center gap-[6px] text-[13px] font-medium text-[#2563EB] hover:gap-[10px] transition-all"
+          className="mt-auto pt-5 inline-flex items-center gap-[6px] text-[13px] font-medium text-[#2563EB] hover:gap-[10px] transition-all"
         >
           Bekijk case
           <svg

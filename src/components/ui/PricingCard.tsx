@@ -1,8 +1,27 @@
 import Button from "@/components/ui/Button";
 import type { Plan } from "@/lib/data";
+import type { Billing } from "@/components/ui/PricingGrid";
 
-export default function PricingCard({ plan }: { plan: Plan }) {
+const YEAR_MONTHS = 11;
+const fmtEuro = (n: number) => n.toLocaleString("nl-BE");
+
+export default function PricingCard({
+  plan,
+  billing = "monthly",
+}: {
+  plan: Plan;
+  billing?: Billing;
+}) {
   const { featured } = plan;
+
+  const hasRecurring = typeof plan.monthlyAmount === "number";
+  const isYearly = billing === "yearly";
+  const recurringAmount = hasRecurring
+    ? isYearly
+      ? plan.monthlyAmount! * YEAR_MONTHS
+      : plan.monthlyAmount!
+    : 0;
+  const periodLabel = isYearly ? "/jaar" : "/m";
 
   return (
     <div
@@ -28,18 +47,28 @@ export default function PricingCard({ plan }: { plan: Plan }) {
         </span>
       </div>
 
-      {plan.monthlySub ? (
+      {hasRecurring && plan.monthlyOptional ? (
         <div
           className={`text-[11px] leading-[1.45] mb-6 space-y-1 ${featured ? "text-white/45" : "text-[#9CA3AF]"}`}
         >
           <div>{plan.sub}</div>
           <div>
-            {plan.monthly} {plan.monthlySub}
+            Optioneel: + €{fmtEuro(recurringAmount)}
+            {periodLabel}
+            {isYearly && " (1 maand gratis)"}
           </div>
+          {plan.monthlySub && <div>{plan.monthlySub}</div>}
         </div>
-      ) : plan.monthly ? (
+      ) : hasRecurring ? (
         <div className={`text-[13px] mb-6 ${featured ? "text-white/50" : "text-[#9CA3AF]"}`}>
-          {plan.monthly} {plan.sub}
+          + €{fmtEuro(recurringAmount)}
+          {periodLabel} {plan.sub}
+          {isYearly && (
+            <span className={featured ? "text-[#7DD3A0]" : "text-[#2563EB]"}>
+              {" "}
+              · 1 maand gratis
+            </span>
+          )}
         </div>
       ) : (
         <div className={`text-[13px] mb-6 ${featured ? "text-white/50" : "text-[#9CA3AF]"}`}>
@@ -81,9 +110,13 @@ export default function PricingCard({ plan }: { plan: Plan }) {
         {plan.cta}
       </Button>
 
-      {plan.monthly && plan.id !== "automation" && (
+      {hasRecurring && !plan.monthlyOptional && (
         <p className={`mt-4 text-[11px] leading-[1.5] ${featured ? "text-white/30" : "text-[#9CA3AF]"}`}>
-          Minimumperiode: 12 maanden.<br />Daarna maandelijks opzegbaar met 1 maand opzegtermijn.
+          {isYearly ? (
+            <>Jaarlijks vooraf betaald, dat is 1 maand gratis t.o.v. maandelijks.</>
+          ) : (
+            <>Minimumperiode: 12 maanden.<br />Daarna maandelijks opzegbaar met 1 maand opzegtermijn.</>
+          )}
         </p>
       )}
 
