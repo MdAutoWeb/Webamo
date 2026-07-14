@@ -13,9 +13,9 @@ export type SiteCase = {
   description: string;
   results: string[];
   whatWeBuilt: string[];
-  testimonialText: string;
-  testimonialAuthor: string;
-  testimonialRole: string;
+  testimonialText?: string;
+  testimonialAuthor?: string;
+  testimonialRole?: string;
   variant: CaseVariant;
 };
 
@@ -73,27 +73,23 @@ export const cases: SiteCase[] = [
     url: "swvanwaes.be",
     href: "https://www.swvanwaes.be",
     image: images.cases.vanWaesSchilderwerken,
-    tags: ["Website", "Design", "Lokale SEO"],
+    tags: ["Website", "CRM", "Lead Management"],
     quote: "Vakmanschap dat blijft.",
     description:
-      "Van Waes Schilderwerken is een schildersbedrijf uit Oostende, actief aan de kust en in het binnenland. De site moest vertrouwen wekken bij particulieren met tweede verblijven, villa's en rijhuizen, en duidelijk maken welke diensten Steven aanbiedt.",
+      "Van Waes Schilderwerken is een schildersbedrijf uit Oostende, actief aan de kust en in het binnenland. Elke offerteaanvraag moest automatisch worden opgevolgd, zodat er meer tijd is voor het vakwerk en minder voor administratie.",
     results: [
       "Professionele uitstraling voor binnen- en buitenschilderwerk",
+      "Automatische opvolging van elke lead via Airtable",
+      "Automatische bevestigingsmail naar elke aanvrager",
       "Vindbaar in Oostende, Bredene, Middelkerke en De Haan",
-      "Realisaties met swipe-galerij en detailshots",
-      "Gratis offerteaanvragen via formulier en telefoon",
     ],
     whatWeBuilt: [
       "Conversiegerichte website op maat",
+      "Airtable CRM voor leadopvolging",
+      "Automatische bevestigingsmail naar klant",
       "Realisatiesgalerij met totaal- en detailbeelden",
       "Lokale SEO voor de kustregio",
-      "Duidelijke diensten: binnen, buiten en decoratieve technieken",
-      "Mobiel-first design met snelle laadtijden",
     ],
-    testimonialText:
-      "Werkt professioneel en correct. Zeer stipt en komt afspraken volledig na. Goede kwaliteit met aandacht voor orde en netheid. Beslist aan te bevelen!",
-    testimonialAuthor: "Steve V.",
-    testimonialRole: "Klant",
     variant: "warm",
   },
   {
@@ -154,30 +150,27 @@ export const cases: SiteCase[] = [
   },
   {
     slug: "kh-reflexologie",
-    name: "KH-Reflexologie",
-    url: "kh-reflexologie.vercel.app",
-    href: "https://kh-reflexologie.vercel.app",
+    name: "KH Reflexologie",
+    url: "kimberleyhwong.com",
+    href: "https://www.kimberleyhwong.com",
     image: images.cases.khReflexologie,
     tags: ["Website", "Design", "Conversie"],
-    quote: "Volledig op maat gebouwd.",
+    quote: "Even ontsnappen aan het 'moeten'.",
     description:
-      "KH-Reflexologie is een reflexologiepraktijk in de regio Brugge. De verouderde website sloot niet aan bij de warme sfeer van de praktijk.",
+      "KH Reflexologie is een reflexologiepraktijk in Sint-Andries, bij Brugge. De nieuwe site moest de warme, rustgevende sfeer van de praktijk uitstralen en bezoekers uitnodigen om een afspraak te boeken.",
     results: [
-      "Professionele uitstraling die past bij de praktijk",
-      "Nieuwe online boekingsaanvragen via het contactformulier",
+      "Warme uitstraling die past bij de praktijk",
+      "Nieuwe afspraakaanvragen via het contactformulier",
+      "Vindbaar op voetreflexologie in en rond Brugge",
       "Mobiel geoptimaliseerde website",
-      "Duidelijke diensten-structuur voor bezoekers",
     ],
     whatWeBuilt: [
       "Volledig op maat ontworpen website",
-      "Warme, rustgevende huisstijl vertaald naar web",
+      "Rustgevende huisstijl vertaald naar web",
       "Contactformulier voor afspraken",
-      "Mobile-first approach",
+      "Lokale SEO voor Brugge en omgeving",
+      "Mobiel-first design met snelle laadtijden",
     ],
-    testimonialText:
-      "Een prachtige website die perfect aansluit bij mijn praktijk. Klanten vinden me nu gemakkelijk online.",
-    testimonialAuthor: "Kimberley",
-    testimonialRole: "KH-Reflexologie",
     variant: "warm",
   },
 ];
@@ -229,6 +222,7 @@ export const plans: Plan[] = [
     sub: "onderhoud",
     features: [
       "Alles van STARTER",
+      "Automatische opvolging",
       "Review automation",
       "5 lokale landingspagina's + maandelijkse rapportage",
     ],
@@ -265,7 +259,6 @@ export const plans: Plan[] = [
       "Werkt met je bestaande website, geen nieuwe site nodig",
       "Leadmachine: scoring, prioriteit & Airtable CRM",
       "Automatische bevestiging & opvolging van leads",
-      "Missed-call text-back (gemiste oproep → direct SMS)",
       "WhatsApp-automatisatie en chatflows op maat",
       "Review automation (meer Google-reviews, automatisch)",
       "Offerte-, intake- en afspraakflows",
@@ -285,7 +278,6 @@ export const automationServices = {
   bullets: [
     "Leadmachine: elk formulier → Airtable, met score, prioriteit en korte samenvatting",
     "Automatische bevestigingsmail en opvolg-reminders",
-    "Missed-call text-back: gemiste oproep → direct een professionele SMS",
     "WhatsApp automatisatie: intake, FAQ en doorverwijzing zonder handmatig getik",
     "Chatflows op je website (lead kwalificeren, afspraak voorstellen)",
     "Review automation: tevreden klanten automatisch vragen om een Google-review",
@@ -299,7 +291,7 @@ export const automationServices = {
 export const faqGeneral: FaqItem[] = [
   {
     q: "Hoe lang duurt het om een site te bouwen?",
-    a: "Gemiddeld 1 tot 2 weken. Sneller dan agencies, zonder kwaliteitsverlies.",
+    a: "Gemiddeld 1 week. Sneller dan agencies, zonder kwaliteitsverlies.",
   },
   {
     q: "Zit domein en hosting inbegrepen?",
@@ -322,7 +314,7 @@ export const faqGeneral: FaqItem[] = [
 export const faqPricing: FaqItem[] = [
   {
     q: "Wat kan ik laten automatiseren?",
-    a: "O.a. leadmachine met Airtable, bevestigingsmails, missed-call text-back, WhatsApp-automatisatie, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, setup vanaf €495+.",
+    a: "O.a. leadmachine met Airtable, bevestigingsmails, WhatsApp-automatisatie, review automation, offerteflows en e-mailopvolging. Prijs hangt af van complexiteit, setup vanaf €495+.",
   },
   {
     q: "Wat zit er in de €45/m?",

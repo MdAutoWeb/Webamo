@@ -9,7 +9,7 @@ const steps = [
   {
     num: "02",
     title: "Bouwen & lanceren",
-    body: "In 1 à 2 weken bouwen we je website en automatisaties. Jij keurt goed, wij lanceren. Snel en zonder gedoe.",
+    body: "Binnen 1 week bouwen we je website en automatisaties. Jij keurt goed, wij lanceren. Snel en zonder gedoe.",
   },
   {
     num: "03",

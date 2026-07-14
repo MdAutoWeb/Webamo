@@ -76,15 +76,17 @@ const jsonLdOrg = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5",
-    reviewCount: String(cases.length),
+    reviewCount: String(cases.filter((c) => c.testimonialText && c.testimonialAuthor).length),
     bestRating: "5",
   },
-  review: cases.map((c) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: c.testimonialAuthor },
-    reviewBody: c.testimonialText,
-    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-  })),
+  review: cases
+    .filter((c) => c.testimonialText && c.testimonialAuthor)
+    .map((c) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: c.testimonialAuthor },
+      reviewBody: c.testimonialText,
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    })),
 };
 
 const jsonLdWebSite = {

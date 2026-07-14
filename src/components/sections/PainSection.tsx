@@ -19,6 +19,11 @@ const pains = [
     title: "Verouderde website die niet converteert",
     body: "Bezoekers komen, maar bellen niet. Je site ziet er niet professioneel uit op mobiel en geeft geen vertrouwen.",
   },
+  {
+    id: "repetitive",
+    title: "Tijd die opgaat aan hetzelfde werk",
+    body: "Elke offerte manueel opstellen, elke mail apart beantwoorden, elke klant hetzelfde uitleggen. Uren die je kwijt bent aan taken die zich elke week herhalen.",
+  },
 ] as const;
 
 function GooglePainVisual({ reduced }: { reduced: boolean }) {
@@ -120,10 +125,42 @@ function WebsitePainVisual({ reduced }: { reduced: boolean }) {
   );
 }
 
+function RepetitivePainVisual({ reduced }: { reduced: boolean }) {
+  const tasks = ["Offerte", "Mail", "Uitleg"];
+
+  return (
+    <div className="w-full flex items-center justify-center gap-2 px-0.5">
+      {tasks.map((label, i) => (
+        <motion.div
+          key={label}
+          className="flex-1 rounded-md border border-[#E5E7EB] bg-white p-2"
+          animate={
+            reduced
+              ? { opacity: i === 1 ? 1 : 0.55 }
+              : { opacity: [0.45, 1, 0.45] }
+          }
+          transition={
+            reduced
+              ? { duration: 0 }
+              : { duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.35 }
+          }
+        >
+          <div className="h-[5px] w-full rounded bg-[#E5E7EB] mb-1.5" />
+          <div className="h-[5px] w-[70%] rounded bg-[#E5E7EB] mb-1.5" />
+          <span className="text-[8px] text-[#9CA3AF] font-medium uppercase tracking-wide">
+            {label}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 const visuals = {
   google: GooglePainVisual,
   leads: LeadsPainVisual,
   website: WebsitePainVisual,
+  repetitive: RepetitivePainVisual,
 };
 
 const icons = {
@@ -142,6 +179,12 @@ const icons = {
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
       <rect x="3" y="3" width="18" height="18" rx="2" />
       <path d="M3 9h18M9 21V9" />
+    </svg>
+  ),
+  repetitive: (
+    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 6v6l3 1.5" />
+      <circle cx="12" cy="12" r="9" />
     </svg>
   ),
 };
@@ -205,7 +248,7 @@ export default function PainSection() {
         </h2>
       </motion.div>
 
-      <MobileSwipeRow desktopCols="md:grid-cols-3">
+      <MobileSwipeRow desktopCols="md:grid-cols-2 lg:grid-cols-4" itemWidth="w-[min(85vw,280px)]">
         {pains.map((pain, i) => (
           <PainCard key={pain.id} {...pain} index={i} reduced={!!reduced} />
         ))}

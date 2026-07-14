@@ -158,29 +158,31 @@ export default async function CaseDetailPage({
       </section>
 
       {/* Testimonial */}
-      <section className="bg-[#F5F5F5]">
-        <div className="max-w-[720px] mx-auto px-5 py-16 text-center">
-          <blockquote className="font-bold text-[20px] md:text-[24px] tracking-[-0.02em] leading-[1.35] text-[#0A0A0A] mb-6">
-            "{c.testimonialText}"
-          </blockquote>
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#0A0A0A] flex items-center justify-center text-white font-bold text-[13px]">
-              {c.testimonialAuthor
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </div>
-            <div className="text-left">
-              <div className="font-semibold text-[14px] text-[#0A0A0A]">
-                {c.testimonialAuthor}
+      {c.testimonialText && c.testimonialAuthor && (
+        <section className="bg-[#F5F5F5]">
+          <div className="max-w-[720px] mx-auto px-5 py-16 text-center">
+            <blockquote className="font-bold text-[20px] md:text-[24px] tracking-[-0.02em] leading-[1.35] text-[#0A0A0A] mb-6">
+              "{c.testimonialText}"
+            </blockquote>
+            <div className="flex items-center justify-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#0A0A0A] flex items-center justify-center text-white font-bold text-[13px]">
+                {c.testimonialAuthor
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
               </div>
-              <div className="text-[12px] text-[#9CA3AF]">
-                {c.testimonialRole}
+              <div className="text-left">
+                <div className="font-semibold text-[14px] text-[#0A0A0A]">
+                  {c.testimonialAuthor}
+                </div>
+                {c.testimonialRole && (
+                  <div className="text-[12px] text-[#9CA3AF]">{c.testimonialRole}</div>
+                )}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Live site link */}
       <section className="max-w-[1120px] mx-auto px-5 py-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-[#E5E7EB]">

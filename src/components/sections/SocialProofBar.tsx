@@ -1,6 +1,6 @@
 const items = [
   "Brugge, Oostkamp en West-Vlaanderen",
-  "1 tot 2 weken levertijd",
+  "1 week levertijd",
   "Airtable CRM integratie",
   "Lokale SEO specialist",
   "Automatische lead opvolging",

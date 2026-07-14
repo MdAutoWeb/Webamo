@@ -19,16 +19,16 @@ export default function CaseCard({
     >
       <Link href={`/cases/${c.slug}`} tabIndex={-1} aria-hidden className="shrink-0">
         <div
-          className={`w-full h-[200px] ${dark ? "bg-[#1a1a1a]" : "bg-[#EDE9E3]"} relative overflow-hidden`}
+          className={`w-full h-[220px] ${dark ? "bg-[#1a1a1a]" : "bg-[#EDE9E3]"} relative overflow-hidden`}
         >
           <Image
             src={c.image}
             alt={`Screenshot ${c.name}`}
             fill
             className="object-cover object-left-top"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 85vw, 380px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 flex gap-2 flex-wrap px-6 pb-5">
             {c.tags.map((t) => (
               <span

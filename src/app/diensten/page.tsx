@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import CTASection from "@/components/sections/CTASection";
+import { agents } from "@/lib/agents";
 import { automationServices } from "@/lib/data";
 import { withSocialMetadata } from "@/lib/site-metadata";
 
@@ -106,6 +107,67 @@ export default function DienstenPage() {
                 {bullets.map((b) => (
                   <li key={b} className="flex items-start gap-[10px]">
                     <svg className="w-[15px] h-[15px] mt-[2px] shrink-0 text-[#2563EB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span className="text-[14px] text-[#374151]">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* AI-Agents intro */}
+      <section id="agents" className="bg-[#F5F5F5] scroll-mt-24">
+        <div className="max-w-[1120px] mx-auto px-5 py-16 md:py-20">
+          <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9CA3AF] mb-3">
+            AI-Agents
+          </div>
+          <h2 className="font-bold text-[28px] md:text-[34px] tracking-[-0.025em] leading-[1.15] mb-4 max-w-[640px]">
+            Onze AI-Agents
+          </h2>
+          <p className="text-[15px] text-[#6B7280] leading-[1.65] max-w-[640px]">
+            Vier flows die op de achtergrond meedraaien. Bij offertes en mails keur jij altijd zelf goed
+            vóór er iets uitgaat. Bovenop je Leadmachine of CRM draaien deze agents automatisch door,
+            elk apart aan te vragen.
+          </p>
+        </div>
+      </section>
+
+      {/* AI-Agents detail */}
+      {agents.map(({ id, tag, title, detailBody, bullets }, i) => (
+        <section
+          key={id}
+          id={id}
+          className={`scroll-mt-24 ${i % 2 === 0 ? "" : "bg-[#F5F5F5]"}`}
+        >
+          <div className="max-w-[1120px] mx-auto px-5 py-16 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className={i % 2 === 1 ? "md:order-2" : ""}>
+              <span className="inline-block text-[10px] font-semibold tracking-[0.1em] uppercase text-[#2563EB] bg-[rgba(37,99,235,.08)] px-[9px] py-[4px] rounded-full mb-5">
+                {tag}
+              </span>
+              <h2 className="font-bold text-[28px] md:text-[34px] tracking-[-0.025em] leading-[1.15] mb-4">
+                {title}
+              </h2>
+              <p className="text-[15px] text-[#6B7280] leading-[1.65] mb-6">{detailBody}</p>
+              <Button href="/contact" variant="primary" size="md">
+                Vraag vrijblijvend aan
+              </Button>
+            </div>
+            <div className={`bg-white rounded-[16px] border border-[#E5E7EB] p-7 ${i % 2 === 1 ? "md:order-1" : ""}`}>
+              <ul className="space-y-[12px]">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-[10px]">
+                    <svg
+                      className="w-[15px] h-[15px] mt-[2px] shrink-0 text-[#2563EB]"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span className="text-[14px] text-[#374151]">{b}</span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CaseCard from "@/components/ui/CaseCard";
+import CasesSwipeRow from "@/components/ui/CasesSwipeRow";
 import { cases } from "@/lib/data";
 
 export default function CasesSection() {
@@ -23,10 +24,7 @@ export default function CasesSection() {
         </Link>
       </div>
 
-      <div
-        className="mobile-swipe flex gap-5 overflow-x-auto snap-x snap-mandatory pb-3 -mx-5 px-5"
-        role="list"
-      >
+      <CasesSwipeRow>
         {cases.map((c) => (
           <div
             key={c.slug}
@@ -36,9 +34,9 @@ export default function CasesSection() {
             <CaseCard c={c} />
           </div>
         ))}
-      </div>
+      </CasesSwipeRow>
       <p className="text-center text-[11px] mt-4 tracking-wide text-[#9CA3AF]">
-        ← swipe om meer te zien →
+        ← swipe of sleep om meer te zien →
       </p>
     </section>
   );
