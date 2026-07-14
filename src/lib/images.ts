@@ -20,5 +20,6 @@ export const images = {
     dakralux: imageSrc("cases", "Dakralux-demo.png"),
     khReflexologie: imageSrc("cases", "kh-reflexologie.png"),
     rbSchilderwerken: imageSrc("cases", "rb-schilderwerken.png"),
+    vanWaesSchilderwerken: imageSrc("cases", "sw-van-waes.png"),
   },
 } as const;

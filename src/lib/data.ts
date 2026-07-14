@@ -68,6 +68,35 @@ export const faqWatKostWebsite: FaqItem = {
 
 export const cases: SiteCase[] = [
   {
+    slug: "van-waes-schilderwerken",
+    name: "Van Waes Schilderwerken",
+    url: "swvanwaes.be",
+    href: "https://www.swvanwaes.be",
+    image: images.cases.vanWaesSchilderwerken,
+    tags: ["Website", "Design", "Lokale SEO"],
+    quote: "Vakmanschap dat blijft.",
+    description:
+      "Van Waes Schilderwerken is een schildersbedrijf uit Oostende, actief aan de kust en in het binnenland. De site moest vertrouwen wekken bij particulieren met tweede verblijven, villa's en rijhuizen, en duidelijk maken welke diensten Steven aanbiedt.",
+    results: [
+      "Professionele uitstraling voor binnen- en buitenschilderwerk",
+      "Vindbaar in Oostende, Bredene, Middelkerke en De Haan",
+      "Realisaties met swipe-galerij en detailshots",
+      "Gratis offerteaanvragen via formulier en telefoon",
+    ],
+    whatWeBuilt: [
+      "Conversiegerichte website op maat",
+      "Realisatiesgalerij met totaal- en detailbeelden",
+      "Lokale SEO voor de kustregio",
+      "Duidelijke diensten: binnen, buiten en decoratieve technieken",
+      "Mobiel-first design met snelle laadtijden",
+    ],
+    testimonialText:
+      "Werkt professioneel en correct. Zeer stipt en komt afspraken volledig na. Goede kwaliteit met aandacht voor orde en netheid. Beslist aan te bevelen!",
+    testimonialAuthor: "Steve V.",
+    testimonialRole: "Klant",
+    variant: "warm",
+  },
+  {
     slug: "rb-schilderwerken",
     name: "RB Schilderwerken",
     url: "rbschilderwerken.be",
