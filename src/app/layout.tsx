@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { images } from "@/lib/images";
-import { cases } from "@/lib/data";
+import { homePageJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/local-business-schema";
 import { defaultOgImages, defaultTwitter } from "@/lib/site-metadata";
 
 const inter = Inter({
@@ -36,68 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLdOrg = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "ProfessionalService"],
-  "@id": "https://webamo.be/#organization",
-  name: "Webamo",
-  url: "https://webamo.be",
-  telephone: "+32493527360",
-  email: "info@webamo.be",
-  priceRange: "€€",
-  logo: {
-    "@type": "ImageObject",
-    url: "https://webamo.be/images/brand/webamo-logo-light-transparent.png",
-    width: 2133,
-    height: 714,
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Brugge",
-    addressRegion: "West-Vlaanderen",
-    addressCountry: "BE",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 51.2093,
-    longitude: 3.2247,
-  },
-  areaServed: [
-    { "@type": "City", name: "Brugge" },
-    { "@type": "City", name: "Oostkamp" },
-    { "@type": "AdministrativeArea", name: "West-Vlaanderen" },
-    { "@type": "AdministrativeArea", name: "Vlaanderen" },
-  ],
-  description: "Conversiegerichte websites en automations voor kleine bedrijven in Brugge en Vlaanderen.",
-  sameAs: [
-    "https://www.facebook.com/profile.php?id=61577447082676",
-    "https://www.linkedin.com/company/webamo",
-  ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: String(cases.filter((c) => c.testimonialText && c.testimonialAuthor).length),
-    bestRating: "5",
-  },
-  review: cases
-    .filter((c) => c.testimonialText && c.testimonialAuthor)
-    .map((c) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: c.testimonialAuthor },
-      reviewBody: c.testimonialText,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    })),
-};
-
-const jsonLdWebSite = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://webamo.be/#website",
-  name: "Webamo",
-  url: "https://webamo.be",
-  publisher: { "@id": "https://webamo.be/#organization" },
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -108,11 +46,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body>

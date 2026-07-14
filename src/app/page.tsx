@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { withSocialMetadata } from "@/lib/site-metadata";
+import { homePageJsonLd } from "@/lib/local-business-schema";
 import Hero from "@/components/sections/Hero";
 import SocialProofBar from "@/components/sections/SocialProofBar";
 import PainSection from "@/components/sections/PainSection";
@@ -26,6 +27,10 @@ export const metadata: Metadata = withSocialMetadata({
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageJsonLd) }}
+      />
       <Hero />
       <FadeUp>
         <SocialProofBar />
